@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深圳市创心医疗科技有限公司</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#home" class="nav__logo">
+      <img src="images/1786754242660888.webp" alt="创心医疗" class="nav__logo-img">
+      <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
+    </a>
+    <nav class="nav__menu">
+      <a href="#home" class="is-active"><span class="nav__link-text-wrap"><span class="nav__link-text">首页</span><span class="nav__link-text nav__link-text--alt">首页</span></span></a>
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">关于创心</span><span class="nav__link-text nav__link-text--alt">关于创心</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="about.html#about">公司简介 <span>›</span></a>
+          <a href="about.html#mission">企业文化 <span>›</span></a>
+          <a href="about.html#business">业务布局 <span>›</span></a>
+          <a href="about.html#timeline">发展历程 <span>›</span></a>
+          <a href="about.html#honors">资质荣誉 <span>›</span></a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="products.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">产品中心</span><span class="nav__link-text nav__link-text--alt">产品中心</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="products.html#cat-aortic">主动脉植介入产品 <span>›</span></a>
+          <a href="products.html#cat-peripheral">外周植介入产品 <span>›</span></a>
+          <a href="products.html#cat-consumables">介入耗材 <span>›</span></a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="service.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">市场服务</span><span class="nav__link-text nav__link-text--alt">市场服务</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="service.html#services">核心服务 <span>›</span></a>
+          <a href="service.html#process">服务流程 <span>›</span></a>
+          <a href="service.html#network">服务网络 <span>›</span></a>
+          <a href="service.html#quality">质量承诺 <span>›</span></a>
+          <a href="service.html#tech-support">技术支持 <span>›</span></a>
+          <a href="service.html#feedback">服务反馈 <span>›</span></a>
+        </div>
+      </div>
+      <a href="news.html"><span class="nav__link-text-wrap"><span class="nav__link-text">新闻速览</span><span class="nav__link-text nav__link-text--alt">新闻速览</span></span></a>
+      <a href="#join"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
+      <a href="#contact" class="nav__cta">联系我们</a>
+    </nav>
+    <div class="nav__lang">
+      <button class="nav__lang-btn is-active">CN</button>
+      <span class="nav__lang-sep">/</span>
+      <button class="nav__lang-btn">EN</button>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="菜单">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero / Banner Carousel ===== -->
+<section class="hero" id="home">
+  <div class="banner">
+    <div class="banner__slides">
+      <!-- Slide 1 -->
+      <div class="banner__slide is-active">
+        <img class="banner__img" src="images/banner1.jpg" alt="主动脉植介入产品">
+        <div class="banner__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            深圳市创心医疗科技有限公司
+          </div>
+          <h1 class="hero__title">
+            守正创新<br>
+            <em>精工智造</em>
+          </h1>
+          <p class="hero__sub">专注血管疾病高端介入器械研发 · 深耕血管微创诊疗临床赛道</p>
+          <div class="hero__actions">
+            <a href="#products" class="btn btn--solid">探索产品</a>
+            <a href="service.html" class="btn btn--ghost">市场服务</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="banner__slide">
+        <img class="banner__img" src="images/banner2.jpg" alt="外周植介入产品">
+        <div class="banner__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            外周植介入产品
+          </div>
+          <h1 class="hero__title">
+            医工融合<br>
+            <em>源头创新</em>
+          </h1>
+          <p class="hero__sub">国内首款中心静脉狭窄药物涂层覆膜支架系统 · 百万血透患者通路新方案</p>
+          <div class="hero__actions">
+            <a href="#products" class="btn btn--solid">查看产品</a>
+            <a href="service.html" class="btn btn--ghost">市场服务</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="banner__slide">
+        <img class="banner__img" src="images/banner3.jpg" alt="介入耗材">
+        <div class="banner__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            介入耗材与标准化产研
+          </div>
+          <h1 class="hero__title">
+            万级洁净<br>
+            <em>合规智造</em>
+          </h1>
+          <p class="hero__sub">GMP 万级净化区 · ISO13485 体系 · 三类医疗器械设计开发与生产制造</p>
+          <div class="hero__actions">
+            <a href="#products" class="btn btn--solid">产品中心</a>
+            <a href="service.html" class="btn btn--ghost">市场服务</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="banner__arrow banner__arrow--prev" aria-label="上一张">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="banner__arrow banner__arrow--next" aria-label="下一张">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="banner__dots">
+      <button class="banner__dot is-active" data-index="0" aria-label="第1张"></button>
+      <button class="banner__dot" data-index="1" aria-label="第2张"></button>
+      <button class="banner__dot" data-index="2" aria-label="第3张"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span class="marquee__logo">CARDIOCARE</span>
+    <span class="marquee__logo">VASCULIFE</span>
+    <span class="marquee__logo">HEARTMEND</span>
+    <span class="marquee__logo">AORTICARE</span>
+    <span class="marquee__logo">INTERVENT</span>
+    <span class="marquee__logo">MEDVASC</span>
+    <span class="marquee__logo">CARDIOFLOW</span>
+    <span class="marquee__logo">VESSELPLUS</span>
+    <span class="marquee__logo">HEARTPRO</span>
+    <span class="marquee__logo">AORTICSOL</span>
+    <span class="marquee__logo">CARDIOCARE</span>
+    <span class="marquee__logo">VASCULIFE</span>
+    <span class="marquee__logo">HEARTMEND</span>
+    <span class="marquee__logo">AORTICARE</span>
+    <span class="marquee__logo">INTERVENT</span>
+    <span class="marquee__logo">MEDVASC</span>
+    <span class="marquee__logo">CARDIOFLOW</span>
+    <span class="marquee__logo">VESSELPLUS</span>
+    <span class="marquee__logo">HEARTPRO</span>
+    <span class="marquee__logo">AORTICSOL</span>
+  </div>
+</div>
+
+<!-- ===== About ===== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__num">About</span>
+      <h2 class="section__title">关于<em>创心医疗</em></h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__text">
+        <p>
+          深圳市创心医疗科技有限公司坐落于深圳市坪山区深城投生命科学园，是一家以<strong>主动脉及外周血管支架</strong>为核心，集研发、生产、销售为一体的专精特新高科技中小企业。
+        </p>
+        <p>
+          公司于 <strong>2020 年 7 月</strong>开始运营，以医工结合的方式专注外周血管器械创新，解决临床痛点。公司拥有独立完善的 GMP 万级净化区，在 ISO13485 质量体系框架内，进行三类医疗器械的设计开发和生产制造。
+        </p>
+        <p>
+          创业团队成员拥有 <strong>10 年以上</strong>行业经验，对临床需求、产业状况和市场均有深入研究。目前公司已开发多款国内外首创器械，其中全球首创 <strong>Stanford A 型主动脉夹层全腔内重建系统</strong>即将完成全部人体临床试验入组；该产品已获得 FDA 突破性器械认证，相关临床研究发表于国际心胸外科顶级期刊 JTCVS，连续 2 次受邀参加 104 和 105 届美国心胸外科年会 AATS，并做专题报告。
+        </p>
+        <a href="products.html" class="btn btn--solid btn--small">查看产品中心 <span class="btn__arrow">→</span></a>
+      </div>
+      <div class="about__stats">
+        <div class="stat">
+          <div class="stat__num" data-target="2020">2020</div>
+          <div class="stat__label">公司成立运营，斩获全国医疗器械创新大赛三等奖</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-target="10" data-suffix="+">10+</div>
+          <div class="stat__label">核心创始团队平均行业深耕经验</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num stat__num--small">FDA 认证</div>
+          <div class="stat__label">全球首创主动脉夹层系统获美国突破性器械认证</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-target="2" data-suffix="款">2款</div>
+          <div class="stat__label">全球首创 突破性原创主动脉/静脉支架核心产品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Products ===== -->
+<section class="section products" id="products">
+  <div class="container">
+    <div class="section__head section__head--wide">
+      <div>
+        <span class="section__num">Products</span>
+        <h2 class="section__title">产品<em>中心</em></h2>
+      </div>
+      <p class="section__desc">聚焦主动脉夹层、外周血管病变等重症大血管疾病，打造全球领先的全腔内重建解决方案。</p>
+    </div>
+
+    <div class="products__grid">
+      <!-- Product 1 -->
+      <article class="product-card product-card--dark">
+        <div class="product-card__top">
+          <span class="product-card__idx">01 / 03</span>
+          <span class="product-card__tag">Aortic Intervention</span>
+        </div>
+        <h3 class="product-card__title">主动脉<br>植介入产品</h3>
+        <div class="product-card__media">
+          <img src="images/ys1.jpg" alt="主动脉植介入产品" class="product-card__img">
+          <div class="product-card__overlay">
+            <p class="product-card__desc">
+              聚焦主动脉夹层、主动脉病变等重症大血管疾病，打造全球领先的全腔内重建解决方案。核心明星产品为全球首创 Stanford A 型主动脉夹层全腔内重建系统，已完成全部人体临床试验入组，斩获美国 FDA 突破性器械认证。
+            </p>
+          </div>
+        </div>
+        <div class="product-card__foot">
+          <span>查看详情</span>
+          <span class="arrow">→</span>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card product-card--accent">
+        <div class="product-card__top">
+          <span class="product-card__idx">02 / 03</span>
+          <span class="product-card__tag">Peripheral Intervention</span>
+        </div>
+        <h3 class="product-card__title">外周<br>植介入产品</h3>
+        <div class="product-card__media">
+          <img src="images/ys2.jpg" alt="外周植介入产品" class="product-card__img">
+          <div class="product-card__overlay">
+            <p class="product-card__desc">
+              深耕全身外周血管、中心静脉狭窄等血管通路病症，面向透析患者、下肢血管病变人群开发创新植介入器械。核心管线包含国内首款治疗中心静脉狭窄药物涂层血管覆膜支架系统，已完成百余例多中心临床试验入组。
+            </p>
+          </div>
+        </div>
+        <div class="product-card__foot">
+          <span>查看详情</span>
+          <span class="arrow">→</span>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card product-card--light">
+        <div class="product-card__top">
+          <span class="product-card__idx">03 / 03</span>
+          <span class="product-card__tag">Routine Consumables</span>
+        </div>
+        <h3 class="product-card__title">介入<br>耗材</h3>
+        <div class="product-card__media">
+          <img src="images/ys3.jpg" alt="介入耗材" class="product-card__img">
+          <div class="product-card__overlay">
+            <p class="product-card__desc">
+              配套血管介入全手术流程的标准化医用耗材，覆盖主动脉、外周介入术中辅助操作需求。代表产品包含血管异物抓捕器（2024 年取得医疗器械注册证 + 生产许可证双证），同时配套各类介入导丝、鞘管、输送辅助耗材等。
+            </p>
+          </div>
+        </div>
+        <div class="product-card__foot">
+          <span>查看详情</span>
+          <span class="arrow">→</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Advantages ===== -->
+<section class="section advantages" id="advantages">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__num">Advantages</span>
+      <h2 class="section__title">我们的<em>优势</em></h2>
+    </div>
+    <div class="advantages__grid">
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="advantage__title">十年资深行业团队</h3>
+        <p class="advantage__desc">核心创始团队平均拥有 10 年以上血管介入行业经验，多款全球/国内首创血管介入器械已落地临床。</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="advantage__title">GMP 万级洁净产线</h3>
+        <p class="advantage__desc">独立完善的 GMP 万级净化区，ISO13485 质量体系框架内进行三类医疗器械设计开发与生产制造。</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="advantage__title">海内外专利布局</h3>
+        <p class="advantage__desc">全球首创产品获美国 FDA 突破性器械认证，临床成果刊登 JTCVS 顶刊，两次受邀 AATS 年会汇报。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== News ===== -->
+<section class="section news" id="news">
+  <div class="container">
+    <div class="section__head section__head--wide">
+      <div>
+        <span class="section__num">News</span>
+        <h2 class="section__title">新闻<em>速览</em></h2>
+      </div>
+      <a href="news.html" class="news__more">
+        <span>查看全部</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="news__list">
+      <a href="#news" class="news__item">
+        <div class="news__thumb">
+          <img src="images/news1.jpg" alt="新闻图片">
+        </div>
+        <div class="news__body">
+          <span class="news__date">2025.06.04</span>
+          <h3 class="news__title">国产 A 型主动脉夹层全腔内系统临床攻坚收官，获国际突破性器械认证</h3>
+          <p class="news__desc">历经多年自主研发与临床验证，国产A型主动脉夹层全腔内治疗系统已完成全部临床入组与长期随访工作，成功打破国外厂商在该领域的长期技术垄断，为复杂主动脉疾病患者提供更安全、更微创的全新治疗选择。</p>
+        </div>
+        <span class="news__arrow">→</span>
+      </a>
+      <a href="#news" class="news__item">
+        <div class="news__thumb">
+          <img src="images/news2.jpg" alt="新闻图片">
+        </div>
+        <div class="news__body">
+          <span class="news__date">2025.06.04</span>
+          <h3 class="news__title">国内首款血透通路药物涂层覆膜支架完成全部多中心临床</h3>
+          <p class="news__desc">针对透析患者血管通路反复狭窄的临床难题，国内首款血透通路药物涂层覆膜支架通过创新药物涂层技术持续抑制血管内膜增生，覆盖全国多中心临床数据显示远期通畅率显著优于国内外同类产品。</p>
+        </div>
+        <span class="news__arrow">→</span>
+      </a>
+      <a href="#news" class="news__item">
+        <div class="news__thumb">
+          <img src="images/news3.jpg" alt="新闻图片">
+        </div>
+        <div class="news__body">
+          <span class="news__date">2025.06.04</span>
+          <h3 class="news__title">专精特新血管器械企业搭建标准化产研体系，夯实三类医械智造底座</h3>
+          <p class="news__desc">作为专精特新血管器械企业，公司建成符合GMP标准的万级洁净车间与全自动化产线，建立覆盖从设计验证、注册检验到批量生产的全流程质量管理体系，全力保障三类医疗器械的稳定交付与品质一致性。</p>
+        </div>
+        <span class="news__arrow">→</span>
+      </a>
+      <a href="#news" class="news__item">
+        <div class="news__thumb">
+          <img src="images/news4.jpg" alt="新闻图片">
+        </div>
+        <div class="news__body">
+          <span class="news__date">2025.06.04</span>
+          <h3 class="news__title">资深产业团队深耕血管介入赛道，医工融合驱动源头创新</h3>
+          <p class="news__desc">资深产业团队汇聚材料学、临床医学与精密制造等领域资深专家，与多家三甲医院共建联合实验室，深度推进医工交叉融合，以真实临床痛点反推产品迭代与源头原始创新，持续提升血管介入器械的国产化水平。</p>
+        </div>
+        <span class="news__arrow">→</span>
+      </a>
+      <a href="#news" class="news__item">
+        <div class="news__thumb">
+          <img src="images/news5.jpg" alt="新闻图片">
+        </div>
+        <div class="news__body">
+          <span class="news__date">2025.06.04</span>
+          <h3 class="news__title">国产血管介入器械加速全球化布局，国内外专利与海外临床双线并进</h3>
+          <p class="news__desc">国产血管介入器械正加速全球化布局，公司已在东南亚、欧洲等地区完成多项产品注册与临床合作，核心产品斩获十余项国际专利，国内外专利与海外临床双线并进，国产高端医疗器械出海步伐持续加快。</p>
+        </div>
+        <span class="news__arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Join ===== -->
+<section class="section join" id="join">
+  <div class="container">
+    <div class="join__inner">
+      <div class="join__left">
+        <span class="section__num section__num--light">Join Us</span>
+        <h2 class="join__title">和我们在创心医疗<br><em>守护人类血管健康</em></h2>
+        <p class="join__desc">我们深耕血管介入医疗器械赛道，为行业人才搭建广阔成长平台，并为技术创新、产业发展提供全链条硬核支撑。</p>
+      </div>
+      <div class="join__right">
+        <a href="#contact" class="btn btn--solid btn--large">加入我们 →</a>
+        <p class="join__hint">岗位匹配 · 简历投递</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="nav__logo-mark">创心</span>
+          <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
+        </div>
+        <p class="footer__slogan">守正创新 · 精工智造</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>产品中心</h4>
+          <a href="#products">主动脉植介入产品</a>
+          <a href="#products">外周植介入产品</a>
+          <a href="#products">介入耗材</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于创心</h4>
+          <a href="#about">公司简介</a>
+          <a href="service.html">市场服务</a>
+          <a href="#news">新闻速览</a>
+          <a href="#join">人才招聘</a>
+        </div>
+        <div class="footer__col">
+          <h4>联系我们</h4>
+          <p>销售负责人：13289868582（杨总）</p>
+          <p>行政人力：18123644056（郭总）</p>
+          <p>邮箱：info@cxmedical.com</p>
+          <p>地址：深圳市坪山区坑梓街道秀新社区宝兰路13号B3栋102</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Copyright © 深圳市创心医疗科技有限公司 All rights reserved.</p>
+      <p>粤ICP备*********号 · 网站建设：合创汇</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Join Us Modal ===== -->
+<div class="modal" id="joinModal">
+  <div class="modal__overlay"></div>
+  <div class="modal__card">
+    <button class="modal__close" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h3 class="modal__title">人才招聘 & 简历投递</h3>
+    <p class="modal__desc">创心医疗深耕血管介入医疗器械赛道，诚邀医疗器械研发工程师、临床专员、质量体系工程师、生产管理及销售精英加入！</p>
+    <form class="join-form" onsubmit="event.preventDefault(); alert('感谢您的投递，我们将尽快与您联系！');">
+      <div class="form-group">
+        <input type="text" class="form-input" placeholder="您的姓名 *" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" class="form-input" placeholder="联系电话 *" required>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-input" placeholder="电子邮箱 *" required>
+      </div>
+      <div class="form-group">
+        <select class="form-input" required>
+          <option value="">应聘意向岗位 *</option>
+          <option>研发工程师</option>
+          <option>临床专员</option>
+          <option>质量体系工程师</option>
+          <option>生产管理</option>
+          <option>销售精英</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea class="form-input form-textarea" placeholder="个人简介或求职意向描述..."></textarea>
+      </div>
+      <button type="submit" class="modal__submit">提交简历 / 咨询岗位</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
