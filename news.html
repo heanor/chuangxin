@@ -51,8 +51,8 @@
         </div>
       </div>
       <a href="news.html" class="is-active"><span class="nav__link-text-wrap"><span class="nav__link-text">新闻速览</span><span class="nav__link-text nav__link-text--alt">新闻速览</span></span></a>
-      <a href="index.html#join"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
-      <a href="index.html#contact" class="nav__cta">联系我们</a>
+      <a href="careers.html"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
+      <a href="contact.html" class="nav__cta">联系我们</a>
     </nav>
     <div class="nav__lang">
       <button class="nav__lang-btn is-active">CN</button>
@@ -68,7 +68,7 @@
 <!-- ===== Page Hero ===== -->
 <section class="page-hero" id="home">
   <div class="page-hero__bg">
-    <img src="images/banner3.jpg" alt="新闻速览" class="page-hero__img">
+    <img src="images/news-1.png" alt="新闻速览" class="page-hero__img">
     <div class="page-hero__overlay"></div>
   </div>
   <div class="container">
@@ -94,7 +94,7 @@
 
     <!-- Featured News -->
     <div class="news-featured" data-cat="company">
-      <a href="#" class="news-featured__link">
+      <a href="#" class="news-featured__link js-news-detail" data-news-id="0">
         <div class="news-featured__media">
           <img src="images/news1.jpg" alt="国产 A 型主动脉夹层全腔内系统临床攻坚收官">
           <span class="news-featured__tag">公司新闻</span>
@@ -103,14 +103,14 @@
           <span class="news-featured__date">2025.06.04</span>
           <h2 class="news-featured__title">国产 A 型主动脉夹层全腔内系统临床攻坚收官，获国际突破性器械认证</h2>
           <p class="news-featured__desc">历经多年自主研发与临床验证，国产A型主动脉夹层全腔内治疗系统已完成全部临床入组与长期随访工作，成功打破国外厂商在该领域的长期技术垄断，为复杂主动脉疾病患者提供更安全、更微创的全新治疗选择。</p>
-          <span class="news-featured__more">阅读全文 →</span>
+          <span class="news-featured__more">阅读全文 <span class="arrow">→</span></span>
         </div>
       </a>
     </div>
 
     <!-- News Grid -->
     <div class="news-grid">
-      <a href="#" class="news-card" data-cat="product">
+      <a href="#" class="news-card js-news-detail" data-cat="product" data-news-id="1">
         <div class="news-card__thumb">
           <img src="images/news2.jpg" alt="国内首款血透通路药物涂层覆膜支架完成全部多中心临床">
           <span class="news-card__cat">产品动态</span>
@@ -122,7 +122,7 @@
         </div>
       </a>
 
-      <a href="#" class="news-card" data-cat="company">
+      <a href="#" class="news-card js-news-detail" data-cat="company" data-news-id="2">
         <div class="news-card__thumb">
           <img src="images/news3.jpg" alt="专精特新血管器械企业搭建标准化产研体系">
           <span class="news-card__cat">公司新闻</span>
@@ -134,7 +134,7 @@
         </div>
       </a>
 
-      <a href="#" class="news-card" data-cat="company">
+      <a href="#" class="news-card js-news-detail" data-cat="company" data-news-id="3">
         <div class="news-card__thumb">
           <img src="images/news4.jpg" alt="资深产业团队深耕血管介入赛道">
           <span class="news-card__cat">公司新闻</span>
@@ -146,7 +146,7 @@
         </div>
       </a>
 
-      <a href="#" class="news-card" data-cat="industry">
+      <a href="#" class="news-card js-news-detail" data-cat="industry" data-news-id="4">
         <div class="news-card__thumb">
           <img src="images/news5.jpg" alt="国产血管介入器械加速全球化布局">
           <span class="news-card__cat">行业资讯</span>
@@ -158,7 +158,7 @@
         </div>
       </a>
 
-      <a href="#" class="news-card" data-cat="product">
+      <a href="#" class="news-card js-news-detail" data-cat="product" data-news-id="5">
         <div class="news-card__thumb">
           <img src="images/news1.jpg" alt="Stanford A 型主动脉夹层系统临床研究发表于 JTCVS">
           <span class="news-card__cat">产品动态</span>
@@ -170,7 +170,7 @@
         </div>
       </a>
 
-      <a href="#" class="news-card" data-cat="industry">
+      <a href="#" class="news-card js-news-detail" data-cat="industry" data-news-id="6">
         <div class="news-card__thumb">
           <img src="images/news2.jpg" alt="血管介入医疗器械行业国产化进程加速">
           <span class="news-card__cat">行业资讯</span>
@@ -204,7 +204,7 @@
         <p class="join__desc">我们深耕血管介入医疗器械赛道，为行业人才搭建广阔成长平台，并为技术创新、产业发展提供全链条硬核支撑。</p>
       </div>
       <div class="join__right">
-        <a href="#contact" class="btn btn--solid btn--large">加入我们 →</a>
+        <a href="contact.html" class="btn btn--solid btn--large">联系我们 <span class="btn__arrow">→</span></a>
         <p class="join__hint">岗位匹配 · 简历投递</p>
       </div>
     </div>
@@ -234,7 +234,7 @@
           <a href="about.html">公司简介</a>
           <a href="service.html">市场服务</a>
           <a href="news.html">新闻速览</a>
-          <a href="index.html#join">人才招聘</a>
+          <a href="careers.html">人才招聘</a>
         </div>
         <div class="footer__col">
           <h4>联系我们</h4>
@@ -247,10 +247,35 @@
     </div>
     <div class="footer__bottom">
       <p>Copyright © 深圳市创心医疗科技有限公司 All rights reserved.</p>
-      <p>粤ICP备*********号 · 网站建设：合创汇</p>
+      <p>粤ICP备*********号</p>
     </div>
   </div>
 </footer>
+
+<!-- ===== News Detail Modal ===== -->
+<div class="modal" id="newsModal">
+  <div class="modal__overlay"></div>
+  <div class="modal__card news-modal__card">
+    <button class="modal__close" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="news-modal__media">
+      <img id="newsModalImg" src="" alt="">
+    </div>
+    <div class="news-modal__body">
+      <h2 class="news-modal__title" id="newsModalTitle"></h2>
+      <div class="news-modal__meta">
+        <span class="news-modal__date" id="newsModalDate"></span>
+        <span class="news-modal__dot">·</span>
+        <span class="news-modal__source" id="newsModalSource">来源：本站</span>
+        <span class="news-modal__dot">·</span>
+        <span class="news-modal__views" id="newsModalViews"></span>
+      </div>
+      <p class="news-modal__summary" id="newsModalSummary"></p>
+      <div class="news-modal__content" id="newsModalContent"></div>
+    </div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

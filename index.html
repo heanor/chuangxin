@@ -50,8 +50,8 @@
         </div>
       </div>
       <a href="news.html"><span class="nav__link-text-wrap"><span class="nav__link-text">新闻速览</span><span class="nav__link-text nav__link-text--alt">新闻速览</span></span></a>
-      <a href="#join"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
-      <a href="#contact" class="nav__cta">联系我们</a>
+      <a href="careers.html"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
+      <a href="contact.html" class="nav__cta">联系我们</a>
     </nav>
     <div class="nav__lang">
       <button class="nav__lang-btn is-active">CN</button>
@@ -68,8 +68,49 @@
 <section class="hero" id="home">
   <div class="banner">
     <div class="banner__slides">
-      <!-- Slide 1 -->
-      <div class="banner__slide is-active">
+      <!-- Slide 1 — CX3 logo particle canvas -->
+      <div class="banner__slide banner__slide--logo is-active">
+        <div class="banner__glow"></div>
+        <canvas class="banner__canvas--logo"></canvas>
+        <div class="banner__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            创新科技 · 精准医疗
+          </div>
+          <h1 class="hero__title">
+            用科技点亮<br>
+            <em>生命之光</em>
+          </h1>
+          <p class="hero__sub">深耕血管介入领域，以医工融合创新为全球患者提供更安全、更有效的高端诊疗方案。</p>
+          <div class="hero__actions">
+            <a href="#products" class="btn btn--solid">探索产品</a>
+            <a href="service.html" class="btn btn--ghost">市场服务</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 — dynamic canvas -->
+      <div class="banner__slide banner__slide--canvas">
+        <canvas class="banner__canvas"></canvas>
+        <div class="banner__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            精准医疗 · 智能分析
+          </div>
+          <h1 class="hero__title">
+            以精准技术<br>
+            <em>守护每一次诊疗</em>
+          </h1>
+          <p class="hero__sub">专注高精度医疗设备研发，通过稳定可靠的硬件与智能数据分析，为临床团队提供值得信赖的解决方案。</p>
+          <div class="hero__actions">
+            <a href="#products" class="btn btn--solid">探索产品</a>
+            <a href="service.html" class="btn btn--ghost">市场服务</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="banner__slide">
         <img class="banner__img" src="images/banner1.jpg" alt="主动脉植介入产品">
         <div class="banner__overlay"></div>
         <div class="hero__content">
@@ -88,7 +129,7 @@
           </div>
         </div>
       </div>
-      <!-- Slide 2 -->
+      <!-- Slide 3 -->
       <div class="banner__slide">
         <img class="banner__img" src="images/banner2.jpg" alt="外周植介入产品">
         <div class="banner__overlay"></div>
@@ -108,7 +149,7 @@
           </div>
         </div>
       </div>
-      <!-- Slide 3 -->
+      <!-- Slide 4 -->
       <div class="banner__slide">
         <img class="banner__img" src="images/banner3.jpg" alt="介入耗材">
         <div class="banner__overlay"></div>
@@ -143,6 +184,8 @@
       <button class="banner__dot is-active" data-index="0" aria-label="第1张"></button>
       <button class="banner__dot" data-index="1" aria-label="第2张"></button>
       <button class="banner__dot" data-index="2" aria-label="第3张"></button>
+      <button class="banner__dot" data-index="3" aria-label="第4张"></button>
+      <button class="banner__dot" data-index="4" aria-label="第5张"></button>
     </div>
   </div>
 </section>
@@ -410,7 +453,7 @@
         <p class="join__desc">我们深耕血管介入医疗器械赛道，为行业人才搭建广阔成长平台，并为技术创新、产业发展提供全链条硬核支撑。</p>
       </div>
       <div class="join__right">
-        <a href="#contact" class="btn btn--solid btn--large">加入我们 →</a>
+        <a href="contact.html" class="btn btn--solid btn--large">联系我们 <span class="btn__arrow">→</span></a>
         <p class="join__hint">岗位匹配 · 简历投递</p>
       </div>
     </div>
@@ -440,7 +483,7 @@
           <a href="#about">公司简介</a>
           <a href="service.html">市场服务</a>
           <a href="news.html">新闻速览</a>
-          <a href="#join">人才招聘</a>
+          <a href="careers.html">人才招聘</a>
         </div>
         <div class="footer__col">
           <h4>联系我们</h4>
@@ -453,7 +496,7 @@
     </div>
     <div class="footer__bottom">
       <p>Copyright © 深圳市创心医疗科技有限公司 All rights reserved.</p>
-      <p>粤ICP备*********号 · 网站建设：合创汇</p>
+      <p>粤ICP备*********号</p>
     </div>
   </div>
 </footer>

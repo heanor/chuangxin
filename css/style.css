@@ -21,9 +21,9 @@
   --white: #ffffff;
 
   /* Typography */
-  --font-display: "Space Grotesk", "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "MiSans", "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "MiSans", "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "MiSans", "JetBrains Mono", monospace;
 
   /* Layout */
   --maxw: 1524px;
@@ -126,7 +126,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav__menu > a,
 .nav__dropdown-toggle {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.3px;
   color: var(--ink);
@@ -137,37 +137,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav__link-text-wrap {
   position: relative;
-  overflow: hidden;
   display: inline-block;
-  height: 1.6em;
-  line-height: 1.6em;
 }
 .nav__link-text {
   display: inline-block;
-  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
 }
 .nav__link-text--alt {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-110%);
-  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  display: none;
 }
-.nav.is-scrolled .nav__link-text--alt {
+/* nav link hover color */
+.nav__menu > a:hover,
+.nav__dropdown-toggle:hover {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color .3s ease;
+}
+.nav.is-scrolled .nav__menu > a:hover,
+.nav.is-scrolled .nav__dropdown-toggle:hover {
   color: var(--primary);
-}
-.nav__menu > a:hover .nav__link-text,
-.nav__dropdown-toggle:hover .nav__link-text {
-  transform: translateY(110%);
-}
-.nav__menu > a:hover .nav__link-text--alt,
-.nav__dropdown-toggle:hover .nav__link-text--alt {
-  transform: translateY(0);
 }
 /* dropdown menu links keep simple hover */
 .nav__dropdown-menu a { overflow: visible; height: auto; }
@@ -175,7 +161,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ---- Dropdown menu ---- */
 .nav__dropdown {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 .nav__dropdown-toggle {
   display: inline-flex;
@@ -195,7 +182,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
-  min-width: 180px;
+  min-width: 200px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 16px 40px -12px rgba(13, 27, 42, 0.18);
@@ -215,11 +202,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--ink);
   border-radius: 8px;
   text-decoration: none;
+  white-space: nowrap;
   transition: background .25s, color .25s, padding-left .25s;
 }
 .nav__dropdown-menu a span {
@@ -247,6 +235,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav__cta:hover { background: #2069B1; }
 .nav__cta:active { background: #003C8A; }
+/* CTA is a button — no underline hover effect */
+.nav__cta::before { display: none; }
 
 .nav__lang {
   display: flex;
@@ -324,6 +314,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px);
   z-index: 1;
 }
+.banner__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #020d2a;
+}
+.banner__canvas--logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+}
+.banner__slide--logo {
+  background: #020d2a;
+}
+.banner__slide--logo .banner__overlay {
+  background: linear-gradient(90deg, #020d2a 0%, rgba(2, 13, 42, 0.85) 24%, rgba(2, 13, 42, 0.15) 58%, rgba(2, 13, 42, 0) 80%);
+}
+.banner__slide--canvas .banner__overlay {
+  background: linear-gradient(90deg, #020d2a 0%, rgba(2, 13, 42, 0.88) 28%, rgba(2, 13, 42, 0) 62%);
+}
+.banner__glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 58% 68% at 68% 52%, rgba(31, 92, 255, .32), transparent 75%),
+    radial-gradient(ellipse 42% 52% at 84% 38%, rgba(255, 60, 85, .2), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 18% 85%, rgba(15, 60, 190, .18), transparent 72%);
+  pointer-events: none;
+}
 
 /* Hero content (over banner, light text) */
 .hero__content {
@@ -399,17 +424,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   color: #fff;
   backdrop-filter: blur(8px);
-  transition: background .3s, transform .3s;
+  opacity: 0.5;
+  transition: opacity .3s, background .3s, transform .3s;
 }
 .banner__arrow svg { width: 22px; height: 22px; }
 .banner__arrow:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
   transform: translateY(-50%) scale(1.08);
 }
 .banner__arrow--prev { left: 28px; }
@@ -622,7 +649,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section__title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 60px;
+  font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -715,7 +742,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .page-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 27, 42, 0.85) 0%, rgba(13, 27, 42, 0.4) 50%, rgba(13, 27, 42, 0.2) 100%);
+  background: linear-gradient(to top, rgba(2, 54, 109, 0.85) 0%, rgba(0, 123, 255, 0.2) 100%);
 }
 .page-hero__content {
   position: relative;
@@ -763,7 +790,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: #fff;
   padding: 48px 40px;
   border-radius: 20px;
-  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .5s;
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .5s, background .4s ease;
 }
 .mission-card::before {
   content: "";
@@ -801,10 +828,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .mission-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px -16px rgba(0, 73, 158, 0.18);
+  background: var(--primary);
+  box-shadow: 0 24px 48px -16px rgba(0, 73, 158, 0.35);
 }
-.mission-card:hover::before { transform: scaleX(1); }
-.mission-card:hover::after { opacity: 0.08; transform: scale(1.1); }
+.mission-card:hover::before { transform: scaleX(1); background: var(--accent); }
+.mission-card:hover::after { opacity: 0.12; transform: scale(1.1); filter: brightness(0) invert(1); }
+.mission-card:hover .mission-card__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.mission-card:hover .mission-card__title { color: #fff; }
+.mission-card:hover .mission-card__desc { color: rgba(255, 255, 255, 0.82); }
 .mission-card__icon {
   position: relative;
   z-index: 1;
@@ -817,6 +851,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--primary);
   border-radius: 18px;
   margin-bottom: 28px;
+  transition: background .4s ease, color .4s ease;
 }
 .mission-card__icon svg { width: 32px; height: 32px; }
 .mission-card__title {
@@ -827,6 +862,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 24px;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  transition: color .4s ease;
 }
 .mission-card__desc {
   position: relative;
@@ -834,7 +870,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 15px;
   color: var(--ink-soft);
   line-height: 1.8;
+  transition: color .4s ease;
 }
+/* Mission cards — slide in from left, staggered by scroll */
+.mission-card.reveal {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.mission-card.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mission-card--1.reveal { transition-delay: 0s; }
+.mission-card--2.reveal { transition-delay: 0.2s; }
+.mission-card--3.reveal { transition-delay: 0.4s; }
 
 /* ============================================================
    Timeline
@@ -958,7 +1007,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -6px;
+  bottom: -10px;
   height: 2px;
   background: #fff;
   border-radius: 2px;
@@ -969,6 +1018,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav.is-scrolled .nav__menu a.is-active { color: var(--primary); }
 .nav.is-scrolled .nav__menu a.is-active::after { background: var(--primary); }
+
+/* Nav hover underline — slides in from right, out to left */
+.nav__menu > a::before,
+.nav__dropdown-toggle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.nav__menu > a:hover::before,
+.nav__dropdown-toggle:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+/* dropdown toggle: exclude the caret from underline */
+.nav__menu .nav__dropdown-toggle::before {
+  right: 20px;
+}
+/* active link already has ::after underline, skip hover ::before */
+.nav__menu > a.is-active::before,
+.nav__dropdown-toggle.is-active::before {
+  display: none;
+}
+.nav.is-scrolled .nav__menu > a::before,
+.nav.is-scrolled .nav__dropdown-toggle::before {
+  background: var(--primary);
+}
 
 /* ============================================================
    Products
@@ -1143,6 +1227,70 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* ---- Product Carousel ---- */
+.product-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.product-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+.product-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity .3s, background .3s, border-color .3s;
+  z-index: 2;
+  padding: 0;
+  cursor: pointer;
+}
+.product-carousel:hover .product-carousel__btn { opacity: 1; }
+.product-carousel__btn--prev { left: 12px; }
+.product-carousel__btn--next { right: 12px; }
+.product-carousel__btn:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+.product-carousel__dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.product-carousel__dot {
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background .25s;
+}
+.product-carousel__dot.is-active {
+  background: #fff;
 }
 .product-detail__tag {
   display: inline-block;
@@ -1419,18 +1567,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(0) scale(1);
 }
 .modal__card--wide {
-  max-width: 960px;
+  max-width: 760px;
   padding: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .product-modal__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 480px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 .product-modal__media {
+  flex-shrink: 0;
   background: #eef2f7;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
+  max-height: 65vh;
 }
 .product-modal__media img {
   width: 100%;
@@ -1439,9 +1593,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: block;
 }
 .product-modal__body {
-  padding: 48px 44px 40px;
+  flex: 1;
+  min-height: 0;
+  padding: 40px 44px 40px;
   overflow-y: auto;
-  max-height: 80vh;
 }
 .product-modal__tag {
   display: inline-block;
@@ -1511,6 +1666,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   justify-content: center;
   transition: transform .3s, background .3s, color .3s;
+  z-index: 10;
 }
 .modal__close svg { width: 16px; height: 16px; }
 .modal__close:hover {
@@ -1907,10 +2063,14 @@ select.form-input:invalid { color: #9aa8bd; }
 .honors__track {
   display: flex;
   gap: 32px;
+  width: max-content;
+  will-change: transform;
+}
+.honors__track.is-smooth {
   transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .honor-card {
-  flex: 0 0 calc((100% - 32px * 3) / 4);
+  flex: 0 0 clamp(220px, 22vw, 340px);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1959,7 +2119,7 @@ select.form-input:invalid { color: #9aa8bd; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(36px, 5vw, 60px);
-  line-height: 1.05;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   margin: 20px 0 28px;
 }
@@ -2140,9 +2300,9 @@ select.form-input:invalid { color: #9aa8bd; }
   .product-detail--reverse .product-detail__body { order: 0; }
   .product-cat__head { margin-bottom: 32px; }
   .product-cat + .product-cat { padding-top: 56px; }
-  .product-modal__inner { grid-template-columns: 1fr; }
-  .product-modal__media { height: 220px; }
-  .product-modal__body { padding: 32px 24px 28px; max-height: 60vh; }
+  .product-modal__inner { display: flex; flex-direction: column; }
+  .product-modal__media { aspect-ratio: 4 / 3; }
+  .product-modal__body { padding: 32px 24px 28px; }
   .product-modal__title { font-size: 22px; }
   .business__body { grid-template-columns: 1fr; gap: 32px; }
   .business__figure { position: static; max-width: 280px; margin: 0 auto; }

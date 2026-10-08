@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - 深圳市创心医疗科技有限公司</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/1786754242660888.webp" alt="创心医疗" class="nav__logo-img">
+      <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
+    </a>
+    <nav class="nav__menu">
+      <a href="index.html"><span class="nav__link-text-wrap"><span class="nav__link-text">首页</span><span class="nav__link-text nav__link-text--alt">首页</span></span></a>
+      <div class="nav__dropdown">
+        <a href="about.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">关于创心</span><span class="nav__link-text nav__link-text--alt">关于创心</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="about.html#about">公司简介 <span>›</span></a>
+          <a href="about.html#mission">企业文化 <span>›</span></a>
+          <a href="about.html#business">业务布局 <span>›</span></a>
+          <a href="about.html#timeline">发展历程 <span>›</span></a>
+          <a href="about.html#honors">资质荣誉 <span>›</span></a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="products.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">产品中心</span><span class="nav__link-text nav__link-text--alt">产品中心</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="products.html#cat-aortic">主动脉植介入产品 <span>›</span></a>
+          <a href="products.html#cat-peripheral">外周植介入产品 <span>›</span></a>
+          <a href="products.html#cat-consumables">介入耗材 <span>›</span></a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="service.html" class="nav__dropdown-toggle"><span class="nav__link-text-wrap"><span class="nav__link-text">市场服务</span><span class="nav__link-text nav__link-text--alt">市场服务</span></span> <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__dropdown-menu">
+          <a href="service.html#services">核心服务 <span>›</span></a>
+          <a href="service.html#process">服务流程 <span>›</span></a>
+          <a href="service.html#network">服务网络 <span>›</span></a>
+          <a href="service.html#quality">质量承诺 <span>›</span></a>
+          <a href="service.html#tech-support">技术支持 <span>›</span></a>
+          <a href="service.html#feedback">服务反馈 <span>›</span></a>
+        </div>
+      </div>
+      <a href="news.html"><span class="nav__link-text-wrap"><span class="nav__link-text">新闻速览</span><span class="nav__link-text nav__link-text--alt">新闻速览</span></span></a>
+      <a href="careers.html"><span class="nav__link-text-wrap"><span class="nav__link-text">人才招聘</span><span class="nav__link-text nav__link-text--alt">人才招聘</span></span></a>
+      <a href="contact.html" class="nav__cta">联系我们</a>
+    </nav>
+    <div class="nav__lang">
+      <button class="nav__lang-btn is-active">CN</button>
+      <span class="nav__lang-sep">/</span>
+      <button class="nav__lang-btn">EN</button>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Page Hero ===== -->
+<section class="page-hero" id="home">
+  <div class="page-hero__bg">
+    <img src="images/about-1.jpg" alt="联系我们" class="page-hero__img">
+    <div class="page-hero__overlay"></div>
+  </div>
+  <div class="container">
+    <div class="page-hero__content">
+      <span class="section__num section__num--light">Contact</span>
+      <h1 class="page-hero__title">联系<em>我们</em></h1>
+      <p class="page-hero__sub">期待与您携手，共创血管介入医疗新未来</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__num">Get in touch</span>
+      <h2 class="section__title">联系<em>创心医疗</em></h2>
+      <p class="section__desc">如您对我们的产品或服务有任何疑问，欢迎通过以下方式与我们联系</p>
+    </div>
+
+    <!-- Top: Info (left) + Map (right) -->
+    <div class="contact__top">
+      <div class="contact__info">
+        <table class="contact__table">
+          <tbody>
+            <tr>
+              <th>销售负责人</th>
+              <td>13289868582（杨总）</td>
+            </tr>
+            <tr>
+              <th>行政人力</th>
+              <td>18123644056（郭总）</td>
+            </tr>
+            <tr>
+              <th>电子邮箱</th>
+              <td>info@cxmedical.com</td>
+            </tr>
+            <tr>
+              <th>公司地址</th>
+              <td>深圳市坪山区坑梓街道秀新社区宝兰路13号B3栋102</td>
+            </tr>
+            <tr>
+              <th>扫码访问</th>
+              <td><div class="contact__qr-img"><img src="images/qr.webp" alt="扫码访问"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="contact__map">
+        <iframe
+          class="contact__map-frame"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=114.338%2C22.713%2C114.348%2C22.723&layer=mapnik&marker=22.718%2C114.343"
+          frameborder="0"
+          scrolling="no"
+          title="创心医疗位置地图"></iframe>
+      </div>
+    </div>
+
+    <!-- Bottom: Message Form -->
+    <div class="contact__form-wrap">
+      <div class="section__head">
+        <span class="section__num">Message</span>
+        <h2 class="section__title">在线<em>留言</em></h2>
+        <p class="section__desc">填写以下表单，我们将尽快与您取得联系</p>
+      </div>
+      <form class="contact__form" onsubmit="event.preventDefault(); alert('感谢您的留言，我们将尽快与您联系！');">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="您的姓名 *" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-input" placeholder="联系电话 *" required>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+              <input type="email" class="form-input" placeholder="电子邮箱 *" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" placeholder="公司名称">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <textarea class="form-input form-textarea" placeholder="留言内容 *" rows="6" required></textarea>
+            </div>
+            <div></div>
+          </div>
+        <button type="submit" class="contact__submit">提交留言</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="images/1786754242660888.webp" alt="创心医疗" class="nav__logo-img">
+          <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
+        </div>
+        <p class="footer__slogan">守正创新 · 精工智造</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>产品中心</h4>
+          <a href="products.html#cat-aortic">主动脉植介入产品</a>
+          <a href="products.html#cat-peripheral">外周植介入产品</a>
+          <a href="products.html#cat-consumables">介入耗材</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于创心</h4>
+          <a href="about.html">公司简介</a>
+          <a href="service.html">市场服务</a>
+          <a href="news.html">新闻速览</a>
+          <a href="careers.html">人才招聘</a>
+        </div>
+        <div class="footer__col">
+          <h4>联系我们</h4>
+          <p>销售负责人：13289868582（杨总）</p>
+          <p>行政人力：18123644056（郭总）</p>
+          <p>邮箱：info@cxmedical.com</p>
+          <p>地址：深圳市坪山区坑梓街道秀新社区宝兰路13号B3栋102</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Copyright © 深圳市创心医疗科技有限公司 All rights reserved.</p>
+      <p>粤ICP备*********号</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
