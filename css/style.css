@@ -379,7 +379,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .hero__title {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 86px;
   line-height: 1.2;
   letter-spacing: -0.04em;
@@ -390,7 +390,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-style: normal;
   color: #ea2e3e;
 }
-.banner__slide:nth-child(4) .hero__title { font-weight: 500; }
 .hero__sub {
   font-size: clamp(16px, 1.6vw, 22px);
   color: rgba(255, 255, 255, 0.82);
