@@ -619,7 +619,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section__num--light { color: rgba(255, 255, 255, 0.5); }
 .section__title {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.03em;
