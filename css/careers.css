@@ -77,7 +77,7 @@
   justify-content: center;
   margin-bottom: 20px;
 }
-.intro-card__icon svg { width: 26px; height: 26px; }
+.intro-card__icon img { width: 26px; height: 26px; }
 .intro-card__title {
   font-family: var(--font-display);
   font-size: 19px;
@@ -347,7 +347,7 @@
   justify-content: center;
   margin-bottom: 20px;
 }
-.benefit-item__icon svg {
+.benefit-item__icon img {
   width: 26px;
   height: 26px;
 }
@@ -366,8 +366,23 @@
 
 /* ===== Apply CTA ===== */
 .careers-apply {
+  position: relative;
   background: var(--ink);
   color: #fff;
+  overflow: hidden;
+}
+.careers-apply::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/foot-1.jpg") center / cover no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+.careers-apply .container {
+  position: relative;
+  z-index: 1;
 }
 .careers-apply__inner {
   display: grid;
