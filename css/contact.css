@@ -51,6 +51,7 @@
 
 /* ===== Contact Section ===== */
 .contact { background: #fff; padding-bottom: 0; }
+#contact .section__title { font-weight: 500; }
 
 /* Top: Info + Map */
 .contact__top {

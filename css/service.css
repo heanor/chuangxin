@@ -52,14 +52,14 @@
 .service-card:hover .service-card__icon {
   background: var(--primary);
 }
-.service-card__icon svg {
+.service-card__icon svg, .service-card__icon img {
   width: 28px;
   height: 28px;
-  stroke: var(--primary);
-  transition: stroke .3s;
+  transition: filter .3s;
 }
-.service-card:hover .service-card__icon svg {
-  stroke: #fff;
+.service-card:hover .service-card__icon svg,
+.service-card:hover .service-card__icon img {
+  filter: brightness(0) invert(1);
 }
 .service-card__num {
   font-family: 'JetBrains Mono', monospace;
@@ -185,19 +185,42 @@
 }
 .network__visual {
   position: relative;
-  background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
   border-radius: 20px;
-  padding: 48px 40px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 1000 / 780;
+}
+.network__map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+.network__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.network__lines line {
+  stroke: rgba(70, 135, 255, 0.25);
+  stroke-width: 0.4;
+  stroke-dasharray: 1.5 1.5;
+  animation: lineFlow 3s linear infinite;
+}
+@keyframes lineFlow {
+  to { stroke-dashoffset: -6; }
 }
 .network__dots {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 .network__dot {
   position: absolute;
@@ -206,6 +229,7 @@
   border-radius: 50%;
   background: #4687FF;
   box-shadow: 0 0 0 6px rgba(70, 135, 255, 0.15);
+  transform: translate(-50%, -50%);
   animation: dotPulse 2s ease-in-out infinite;
 }
 .network__dot--core {
@@ -246,6 +270,7 @@
 .network__stat-num span {
   font-size: 18px;
   font-weight: 500;
+  margin-left: 4px;
 }
 .network__stat-label {
   font-size: 14px;
@@ -380,14 +405,14 @@
 .quality-card:hover .quality-card__icon {
   background: var(--primary);
 }
-.quality-card__icon svg {
+.quality-card__icon svg, .quality-card__icon img {
   width: 30px;
   height: 30px;
-  stroke: var(--primary);
-  transition: stroke .3s;
+  transition: filter .3s;
 }
-.quality-card:hover .quality-card__icon svg {
-  stroke: #fff;
+.quality-card:hover .quality-card__icon svg,
+.quality-card:hover .quality-card__icon img {
+  filter: brightness(0) invert(1);
 }
 .quality-card__title {
   font-family: 'MiSans', sans-serif;
@@ -430,7 +455,7 @@
   font-family: 'MiSans', sans-serif;
   font-size: 132px;
   font-weight: 700;
-  color: rgba(0, 72, 158, 0.13);
+  color: #00489e;
   line-height: 1;
   letter-spacing: -0.02em;
   z-index: 0;
@@ -565,10 +590,9 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.feedback-list__icon svg {
+.feedback-list__icon img {
   width: 22px;
   height: 22px;
-  stroke: var(--primary);
 }
 .feedback-list strong {
   display: block;
@@ -610,6 +634,7 @@
 .sla-item__time span {
   font-size: 16px;
   font-weight: 500;
+  margin-left: 4px;
 }
 .sla-item__text {
   font-size: 13px;

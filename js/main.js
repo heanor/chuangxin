@@ -739,35 +739,6 @@ counters.forEach(c => counterIO.observe(c));
   });
 })();
 
-// ---- Marquee (JS driven for smooth speed change) ----
-(() => {
-  const marquee = document.querySelector('.marquee');
-  if (!marquee) return;
-  const track = marquee.querySelector('.marquee__track');
-
-  let pos = 0;
-  let isHover = false;
-  let lastTime = performance.now();
-  const NORMAL_SPEED = 50; // px/s
-  const HOVER_SPEED = 15;  // px/s (slower on hover)
-
-  const animate = (now) => {
-    const dt = Math.min((now - lastTime) / 1000, 0.1);
-    lastTime = now;
-    const speed = isHover ? HOVER_SPEED : NORMAL_SPEED;
-    pos -= speed * dt;
-    const half = track.scrollWidth / 2;
-    if (Math.abs(pos) >= half) pos += half;
-    track.style.transform = `translateX(${pos}px)`;
-    requestAnimationFrame(animate);
-  };
-
-  marquee.addEventListener('mouseenter', () => { isHover = true; });
-  marquee.addEventListener('mouseleave', () => { isHover = false; });
-
-  requestAnimationFrame(animate);
-})();
-
 // ---- News Category Tabs ----
 (() => {
   const tabsContainer = document.querySelector('.news-tabs');
