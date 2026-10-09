@@ -68,12 +68,14 @@ counters.forEach(c => counterIO.observe(c));
   const dots = banner.querySelectorAll('.banner__dot');
   const prevBtn = banner.querySelector('.banner__arrow--prev');
   const nextBtn = banner.querySelector('.banner__arrow--next');
+  const playBtn = banner.querySelector('.banner__play-btn');
   const total = slides.length;
-  let current = 0;
-  let timer = null;
   const interval = 7000;
-  let slideStart = 0;
-  let pausedAt = 0;
+  let current = 0;
+  let rafId = null;
+  let slideStart = 0;        // timestamp when current slide started playing
+  let elapsedBeforePause = 0; // accumulated elapsed ms across pauses
+  let isPlaying = true;
 
   // Inject progress fill into each dot
   dots.forEach(dot => {
@@ -82,14 +84,33 @@ counters.forEach(c => counterIO.observe(c));
     dot.appendChild(fill);
   });
 
-  const setFillDuration = (dot, durationMs) => {
+  const setProgress = (dot, percent) => {
     const fill = dot.querySelector('.banner__dot-fill');
     if (!fill) return;
     fill.style.transition = 'none';
-    fill.style.width = '0';
-    void fill.offsetWidth;
-    fill.style.transition = `width ${durationMs}ms linear`;
-    fill.style.width = '100%';
+    fill.style.width = percent + '%';
+  };
+
+  const updatePlayButton = () => {
+    if (!playBtn) return;
+    playBtn.classList.toggle('is-playing', isPlaying);
+    playBtn.setAttribute('aria-label', isPlaying ? '暂停轮播' : '播放轮播');
+  };
+
+  // Single rAF loop drives BOTH the progress bar and the slide switch,
+  // so they can never drift out of sync.
+  const tick = () => {
+    if (!isPlaying) return;
+    const elapsed = Date.now() - slideStart + elapsedBeforePause;
+    const progress = Math.min(elapsed / interval * 100, 100);
+    const activeDot = dots[current];
+    if (activeDot) setProgress(activeDot, progress);
+
+    if (elapsed >= interval) {
+      go(current + 1);
+    } else {
+      rafId = requestAnimationFrame(tick);
+    }
   };
 
   const go = (index) => {
@@ -100,67 +121,66 @@ counters.forEach(c => counterIO.observe(c));
       if (fill) { fill.style.transition = 'none'; fill.style.width = '0'; }
       d.classList.toggle('is-active', i === current);
     });
-    const activeDot = dots[current];
-    if (activeDot) setFillDuration(activeDot, interval);
     slideStart = Date.now();
-    pausedAt = 0;
+    elapsedBeforePause = 0;
+    if (isPlaying) {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(tick);
+    }
   };
   const next = () => go(current + 1);
   const prev = () => go(current - 1);
 
-  const start = () => { stop(); timer = setInterval(next, interval); };
-  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+  const play = () => {
+    if (isPlaying) return;
+    isPlaying = true;
+    slideStart = Date.now();
+    rafId = requestAnimationFrame(tick);
+    updatePlayButton();
+  };
 
-  prevBtn.addEventListener('click', () => { prev(); start(); });
-  nextBtn.addEventListener('click', () => { next(); start(); });
+  const pause = () => {
+    if (!isPlaying) return;
+    isPlaying = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    elapsedBeforePause += Date.now() - slideStart;
+    updatePlayButton();
+  };
+
+  const togglePlay = () => { isPlaying ? pause() : play(); };
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       go(parseInt(dot.dataset.index, 10));
-      start();
     });
   });
 
-  // Pause on hover (timer + progress fill)
-  banner.addEventListener('mouseenter', () => {
-    stop();
-    pausedAt = Date.now();
-    const activeDot = banner.querySelector('.banner__dot.is-active');
-    if (!activeDot) return;
-    const fill = activeDot.querySelector('.banner__dot-fill');
-    if (!fill) return;
-    const computed = getComputedStyle(fill);
-    const fillWidth = parseFloat(computed.width) / activeDot.offsetWidth;
-    fill.style.transition = 'none';
-    fill.style.width = (fillWidth * 100) + '%';
-  });
-  banner.addEventListener('mouseleave', () => {
-    const activeDot = banner.querySelector('.banner__dot.is-active');
-    if (!activeDot) { start(); return; }
-    const fill = activeDot.querySelector('.banner__dot-fill');
-    const fillWidth = fill ? parseFloat(getComputedStyle(fill).width) / activeDot.offsetWidth : 0;
-    const remaining = interval * (1 - fillWidth);
-    if (fill) {
-      void fill.offsetWidth;
-      fill.style.transition = `width ${Math.max(remaining, 100)}ms linear`;
-      fill.style.width = '100%';
-    }
-    timer = setTimeout(() => { next(); start(); }, Math.max(remaining, 100));
-    pausedAt = 0;
-  });
+  if (playBtn) {
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlay();
+    });
+    // Prevent entering the button from pausing the banner via mouseenter
+    playBtn.addEventListener('mouseenter', (e) => e.stopPropagation());
+  }
+
+  // Pause on hover (resume on leave)
+  banner.addEventListener('mouseenter', pause);
+  banner.addEventListener('mouseleave', play);
 
   // Touch swipe
   let touchX = 0;
   banner.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
   banner.addEventListener('touchend', e => {
     const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); start(); }
+    if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
   }, { passive: true });
 
-  // Init first dot progress
-  const firstActiveDot = banner.querySelector('.banner__dot.is-active');
-  if (firstActiveDot) setFillDuration(firstActiveDot, interval);
-
-  start();
+  // Init
+  updatePlayButton();
+  go(0);
 })();
 
 // ---- Banner canvas particle animation (slide 4) ----
@@ -175,13 +195,13 @@ counters.forEach(c => counterIO.observe(c));
     const s = 64, c = document.createElement('canvas');
     c.width = c.height = s;
     const g = c.getContext('2d'), r = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-    const st = blur === 0 ? [[0, 1], [.3, .95], [.42, .35], [.5, 0]]
-      : blur === 1 ? [[0, .75], [.35, .5], [.7, .12], [1, 0]]
-      : [[0, .4], [.5, .25], [.85, .06], [1, 0]];
+    const st = blur === 0 ? [[0, 1], [.35, .95], [.5, .5], [1, 0]]
+      : blur === 1 ? [[0, .85], [.4, .6], [.75, .2], [1, 0]]
+      : [[0, .5], [.5, .3], [.85, .1], [1, 0]];
     st.forEach(([o, a]) => r.addColorStop(o, 'rgba(' + rgb + ',' + a + ')'));
     g.fillStyle = r; g.fillRect(0, 0, s, s); return c;
   };
-  const SP = [['40,110,255'], ['90,200,255'], ['255,80,110']].map(([c]) => [0, 1, 2].map(b => sprite(c, b)));
+  const SP = [['30,100,255'], ['80,200,255'], ['255,50,90']].map(([c]) => [0, 1, 2].map(b => sprite(c, b)));
 
   const dots = [];
   for (let i = 0; i < COLS; i++) for (let j = 0; j < ROWS; j++) {
@@ -234,11 +254,11 @@ counters.forEach(c => counterIO.observe(c));
       const py = oy + (.62 - y * 1.6) * fy / Z * (mob ? .9 : 1) - fy * .2;
       if (px < -40 || px > W + 40 || py < -40 || py > H + 40) continue;
       const h = Math.max(0, Math.min(1, (y / .38 + .6) / 1.4));
-      let a = (.16 + .84 * h * h) * (1 - z * .5) * (.85 + .15 * Math.sin(t * 2 + d.tw));
+      let a = (.24 + .76 * h * h) * (1 - z * .35) * (.9 + .1 * Math.sin(t * 2 + d.tw));
       if (a < .03) continue;
       const blur = z < .2 ? 2 : (z < .34 ? 1 : (d.k == 1 && z > .75 ? 1 : 0));
       const size = (7.5 / Z) * d.sz * (blur === 0 ? 1 : blur === 1 ? 2.2 : 4.2) * (mob ? .9 : 1) * (W / 1400 + .4);
-      ctx.globalAlpha = Math.min(1, a * (blur === 2 ? .8 : 1));
+      ctx.globalAlpha = Math.min(1, a * (blur === 2 ? .9 : 1));
       const k = h > .78 && d.k != 2 ? 1 : d.k;
       ctx.drawImage(SP[k][blur], px - size / 2, py - size / 2, size, size);
     }
@@ -269,14 +289,14 @@ counters.forEach(c => counterIO.observe(c));
     const n = 64, c = document.createElement('canvas');
     c.width = c.height = n;
     const g = c.getContext('2d'), r = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-    const st = blur === 0 ? [[0, 1], [.3, .95], [.42, .35], [.5, 0]]
-      : blur === 1 ? [[0, .75], [.35, .5], [.7, .12], [1, 0]]
-      : [[0, .4], [.5, .25], [.85, .06], [1, 0]];
+    const st = blur === 0 ? [[0, 1], [.32, .95], [.45, .4], [.52, 0]]
+      : blur === 1 ? [[0, .85], [.4, .6], [.75, .2], [1, 0]]
+      : [[0, .5], [.5, .3], [.85, .1], [1, 0]];
     st.forEach(([o, a]) => r.addColorStop(o, 'rgba(' + rgb + ',' + a + ')'));
     g.fillStyle = r; g.fillRect(0, 0, n, n); return c;
   };
   // 0 blue, 1 bright blue, 2 red, 3 bright red
-  const SP = ['40,110,255', '80,150,255', '255,62,78', '255,110,125'].map(c => [0, 1, 2].map(b => sprite(c, b)));
+  const SP = ['30,100,255', '60,140,255', '255,50,70', '255,90,110'].map(c => [0, 1, 2].map(b => sprite(c, b)));
 
   const N = 480, V = 10, HW = .075, raw = [], push = (x, y, f) => raw.push([x, y, f || 0]);
   const cx0 = .655, cy0 = .257, rr = .196, vx = .65;
@@ -327,8 +347,8 @@ counters.forEach(c => counterIO.observe(c));
       const u = ((q.u + t * q.vx) % 1 + 1) % 1, v = ((q.v + t * q.vy) % 1 + 1) % 1;
       const px = u * W - sx * 80 * q.d, py = v * H - sy * 55 * q.d;
       const sh = Math.sin(t * q.fr + q.tw);
-      if (q.bk) { const sz = (32 + q.d * 36) * (W / 1400 + .5); const a = (.07 + .09 * Math.abs(sh)) * ((u < .45 && !mob) ? .55 : 1); const isRed = q.r < .18; ctx.globalAlpha = a; ctx.drawImage(SP[isRed ? 2 : 1][2], px - sz / 2, py - sz / 2, sz, sz); }
-      else { const bl = q.d > .75 ? 2 : q.d > .45 ? 1 : 0; const sz = (2.4 + q.d * 5.5) * q.sz * (bl === 0 ? 1 : bl === 1 ? 1.8 : 2.8) * (W / 1400 + .5); const a = (.22 + .38 * Math.abs(sh)) * (bl === 0 ? 1 : bl === 1 ? .55 : .28) * ((u < .45 && !mob) ? .45 : 1); const isRed = q.r < (u > .55 ? .28 : .07); ctx.globalAlpha = a; ctx.drawImage(SP[(isRed ? 2 : 0) + (q.d < .35 && q.r > .82 ? 1 : 0)][bl], px - sz / 2, py - sz / 2, sz, sz); }
+      if (q.bk) { const sz = (32 + q.d * 36) * (W / 1400 + .5); const a = (.14 + .18 * Math.abs(sh)) * ((u < .45 && !mob) ? .6 : 1); const isRed = q.r < .18; ctx.globalAlpha = a; ctx.drawImage(SP[isRed ? 2 : 1][2], px - sz / 2, py - sz / 2, sz, sz); }
+      else { const bl = q.d > .75 ? 2 : q.d > .45 ? 1 : 0; const sz = (2.4 + q.d * 5.5) * q.sz * (bl === 0 ? 1 : bl === 1 ? 1.8 : 2.8) * (W / 1400 + .5); const a = (.32 + .5 * Math.abs(sh)) * (bl === 0 ? 1 : bl === 1 ? .6 : .32) * ((u < .45 && !mob) ? .5 : 1); const isRed = q.r < (u > .55 ? .28 : .07); ctx.globalAlpha = a; ctx.drawImage(SP[(isRed ? 2 : 0) + (q.d < .35 && q.r > .82 ? 1 : 0)][bl], px - sz / 2, py - sz / 2, sz, sz); }
     }
     for (const d of dots) {
       const c = P[d.i]; let x, y, z, nz = 1, g = 0;
@@ -338,12 +358,12 @@ counters.forEach(c => counterIO.observe(c));
       let X = x * ca + z * sa, Z = -x * sa + z * ca, Y = y * cb - Z * sb; Z = y * sb + Z * cb;
       const s = F / (F + Z), px = cx + X * A * s, py = cy + Y * A * s;
       let dd = Math.abs(c.f - pulse); dd = Math.min(dd, 1 - dd); g = Math.max(0, 1 - dd / .07);
-      let a = d.dust ? (.07 + .06 * Math.sin(t * 1.5 + d.ph)) * (.7 + .3 * s) : (.18 + .42 * (.3 + .7 * nz) + g * .35) * (1 - Z * .25);
+      let a = d.dust ? (.12 + .1 * Math.sin(t * 1.5 + d.ph)) * (.7 + .3 * s) : (.26 + .5 * (.3 + .7 * nz) + g * .4) * (1 - Z * .2);
       a = Math.max(0, Math.min(1, a)); if (a < .03) continue;
       const az = Math.abs(Z), blur = d.dust ? (az < .3 ? 1 : 2) : (az < .3 ? 0 : az < .65 ? 1 : 2);
       const sz = A * .022 * s * d.sz * (blur === 0 ? 1 : blur === 1 ? 1.8 : 2.8) * (d.dust ? 1.3 : 1);
       const u = Math.max(0, Math.min(1, (c.x + .45) / .3)), red = d.r < u, br = a > .8 ? 1 : 0;
-      ctx.globalAlpha = Math.min(1, a * (blur === 0 ? 1 : blur === 1 ? .45 : .2));
+      ctx.globalAlpha = Math.min(1, a * (blur === 0 ? 1 : blur === 1 ? .55 : .28));
       ctx.drawImage(SP[(red ? 2 : 0) + br][blur], px - sz / 2, py - sz / 2, sz, sz);
     }
     for (const q of STR) { q.f = (q.f + q.sp * dt) % 1; for (let k = 0; k < 5; k++) { const fk = ((q.f - k * .005) % 1 + 1) % 1, c = P[Math.floor(fk * N) % N]; const [px, py, Z, s] = proj((c.x + c.nx * q.off * HW * 2.2) * sc, (c.y + c.ny * q.off * HW * 2.2) * sc, (c.z + q.oz) * sc); const red = q.r < Math.max(0, Math.min(1, (c.x + .45) / .3)), sz = A * .016 * s * (1 - k * .12); ctx.globalAlpha = Math.max(0, (.8 - k * .16) * (1 - Z * .2)); ctx.drawImage(SP[red ? 3 : 1][0], px - sz / 2, py - sz / 2, sz, sz); } }
@@ -933,9 +953,17 @@ counters.forEach(c => counterIO.observe(c));
     });
   }
 
+  const tabsContainer = document.querySelector('.pos-tabs');
   const tabs = document.querySelectorAll('.pos-tab');
   const items = document.querySelectorAll('.pos-item');
   if (tabs.length && items.length) {
+    const updateIndicator = () => {
+      const active = tabsContainer.querySelector('.pos-tab.is-active');
+      if (active) {
+        tabsContainer.style.setProperty('--indicator-left', active.offsetLeft + 'px');
+        tabsContainer.style.setProperty('--indicator-width', active.offsetWidth + 'px');
+      }
+    };
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('is-active'));
@@ -944,8 +972,11 @@ counters.forEach(c => counterIO.observe(c));
         items.forEach(item => {
           item.style.display = (dept === 'all' || item.dataset.dept === dept) ? '' : 'none';
         });
+        updateIndicator();
       });
     });
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
   }
 
   // 投递简历按钮打开弹窗

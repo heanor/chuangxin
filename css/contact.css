@@ -22,7 +22,7 @@
 .page-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(2, 54, 109, 0.85) 0%, rgba(0, 123, 255, 0.2) 100%);
+  background: linear-gradient(to top, rgba(2, 54, 109, 0.85) 0%, rgba(2, 67, 137, 0.52) 50%, rgba(1, 83, 169, 0.36) 100%);
 }
 .page-hero__content {
   position: relative;
@@ -41,7 +41,7 @@
 }
 .page-hero__title em {
   font-style: normal;
-  color: var(--accent);
+  color: #fff;
 }
 .page-hero__sub {
   font-size: 18px;
