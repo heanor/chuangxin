@@ -162,13 +162,7 @@ counters.forEach(c => counterIO.observe(c));
       e.stopPropagation();
       togglePlay();
     });
-    // Prevent entering the button from pausing the banner via mouseenter
-    playBtn.addEventListener('mouseenter', (e) => e.stopPropagation());
   }
-
-  // Pause on hover (resume on leave)
-  banner.addEventListener('mouseenter', pause);
-  banner.addEventListener('mouseleave', play);
 
   // Touch swipe
   let touchX = 0;
