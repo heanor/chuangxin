@@ -737,12 +737,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background-size: cover;
   background-position: center;
   background-color: #E8EEF5;
-  transition: background 0.4s ease, transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
-.stat--1:hover .stat__bg { background: linear-gradient(135deg, #8A6A12 0%, #D4A017 100%); }
-.stat--2:hover .stat__bg { background: linear-gradient(135deg, #00489e 0%, #007BFF 100%); }
-.stat--3:hover .stat__bg { background: linear-gradient(135deg, #8a1a2a 0%, #ea2e3e 100%); }
-.stat--4:hover .stat__bg { background: linear-gradient(135deg, #8C4A10 0%, #E07B2A 100%); }
+.stat__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.stat--1:hover .stat__bg::after { background: linear-gradient(135deg, #8A6A12 0%, #D4A017 100%); opacity: 1; }
+.stat--2:hover .stat__bg::after { background: linear-gradient(135deg, #00489e 0%, #007BFF 100%); opacity: 1; }
+.stat--3:hover .stat__bg::after { background: linear-gradient(135deg, #8a1a2a 0%, #ea2e3e 100%); opacity: 1; }
+.stat--4:hover .stat__bg::after { background: linear-gradient(135deg, #8C4A10 0%, #E07B2A 100%); opacity: 1; }
 
 .stat:hover .stat__bg { transform: scale(1.06); }
 
@@ -759,7 +766,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute;
   top: 42%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   z-index: 2;
   width: 72px;
   height: 72px;
@@ -770,6 +777,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   mask-position: center;
   -webkit-mask-size: contain;
   mask-size: contain;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 0.4s ease, background-color 0.4s ease;
 }
 .stat--1 .stat__icon {
@@ -802,7 +811,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .stat--4 .stat__label { color: #D9701F; }
 .stat--4 .stat__desc { color: rgba(217, 112, 31, 0.8); }
 .stat:hover .stat__icon {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate3d(-50%, -50%, 0) scale(1.1);
   background-color: #fff;
 }
 
