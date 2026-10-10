@@ -238,7 +238,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--primary);
   color: var(--white) !important;
   padding: 10px 20px;
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-button);
   transition: background .3s, transform .3s;
 }
 .nav__cta:hover { background: #2069B1; }
@@ -564,7 +564,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-button);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -1305,7 +1305,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   padding: 10px 28px;
   border: 1.5px solid var(--primary);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-button);
   color: var(--primary);
   background: transparent;
   align-self: flex-start;
@@ -1594,7 +1594,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   padding: 10px 28px;
   border: 1.5px solid var(--ink);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-button);
   color: var(--ink);
   background: transparent;
   transition: background .35s, color .35s, box-shadow .35s;
@@ -1919,7 +1919,7 @@ select.form-input:invalid { color: #9aa8bd; }
   color: #fff;
   background: var(--primary);
   border: none;
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-button);
   cursor: pointer;
   transition: background .3s, transform .2s;
 }
