@@ -28,6 +28,12 @@
   /* Layout */
   --maxw: 1524px;
   --pad: 24px;
+
+  /* Radius — 工业精密圆角规范 */
+  --radius-card: 4px;       /* 数据卡片与资质证书，严密可靠 */
+  --radius-badge: 2px;      /* FDA 认证、专利号标签，硬朗紧凑 */
+  --radius-button: 4px;     /* 规范按钮，工业平稳圆角 */
+  --radius-control: 9999px; /* 抓捕环/介入操作模拟器控件，全胶囊圆角 */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -186,7 +192,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateX(-50%) translateY(-8px);
   min-width: 200px;
   background: #fff;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   box-shadow: 0 16px 40px -12px rgba(13, 27, 42, 0.18);
   padding: 8px;
   opacity: 0;
@@ -207,7 +213,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 16px;
   font-weight: 500;
   color: var(--ink);
-  border-radius: 8px;
+  border-radius: var(--radius-card);
   text-decoration: none;
   white-space: nowrap;
   transition: background .25s, color .25s, padding-left .25s;
@@ -232,7 +238,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--primary);
   color: var(--white) !important;
   padding: 10px 20px;
-  border-radius: 100px;
+  border-radius: var(--radius-control);
   transition: background .3s, transform .3s;
 }
 .nav__cta:hover { background: #2069B1; }
@@ -459,7 +465,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 10px;
   padding: 12px 16px;
   background: rgba(0, 0, 0, 0.35);
-  border-radius: 100px;
+  border-radius: var(--radius-control);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -476,7 +482,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .banner__dot.is-active {
   width: 48px;
   height: 8px;
-  border-radius: 4px;
+  border-radius: var(--radius-card);
   background: rgba(255, 255, 255, 0.25);
 }
 .banner__dot-fill {
@@ -485,7 +491,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   top: 0;
   height: 100%;
   width: 0;
-  border-radius: 4px;
+  border-radius: var(--radius-card);
   background: #fff;
 }
 .banner__dot.is-active .banner__dot-fill {
@@ -513,8 +519,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: rgba(0, 0, 0, 0.5);
 }
 .banner__play-icon {
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
   position: absolute;
   transition: opacity 0.25s ease;
 }
@@ -558,7 +564,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  border-radius: 100px;
+  border-radius: var(--radius-control);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -711,7 +717,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 100%;
   gap: 2px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-card);
 }
 .stat {
   position: relative;
@@ -934,7 +940,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   background: #fff;
   padding: 48px 40px;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .5s, background .4s ease;
 }
 .mission-card::before {
@@ -996,7 +1002,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   justify-content: center;
   background: rgba(0, 73, 158, 0.1);
   color: var(--primary);
-  border-radius: 18px;
+  border-radius: var(--radius-card);
   margin-bottom: 28px;
   transition: background .4s ease, color .4s ease;
 }
@@ -1157,7 +1163,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   bottom: -10px;
   height: 2px;
   background: #fff;
-  border-radius: 2px;
+  border-radius: var(--radius-badge);
 }
 /* dropdown toggle: exclude the caret from underline */
 .nav__menu .nav__dropdown-toggle.is-active::after {
@@ -1176,7 +1182,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   bottom: -10px;
   height: 2px;
   background: #fff;
-  border-radius: 2px;
+  border-radius: var(--radius-badge);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1220,7 +1226,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   overflow: hidden;
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
 }
 .product-card::before {
   content: '';
@@ -1257,7 +1263,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   height: 390px;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
 }
 .product-card__img {
   width: 100%;
@@ -1299,7 +1305,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   padding: 10px 28px;
   border: 1.5px solid var(--primary);
-  border-radius: 999px;
+  border-radius: var(--radius-control);
   color: var(--primary);
   background: transparent;
   align-self: flex-start;
@@ -1366,7 +1372,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .product-detail--reverse .product-detail__media { order: 2; }
 .product-detail--reverse .product-detail__body { order: 1; }
 .product-detail__media {
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   background: #eef2f7;
   aspect-ratio: 4 / 3;
@@ -1433,7 +1439,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .product-carousel__dot {
   width: 30px;
   height: 4px;
-  border-radius: 4px;
+  border-radius: var(--radius-card);
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: background .25s;
@@ -1504,7 +1510,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 6px 14px;
   background: #f0f4fa;
   color: var(--primary);
-  border-radius: 999px;
+  border-radius: var(--radius-badge);
   font-size: 13px;
   font-weight: 500;
 }
@@ -1519,7 +1525,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .advantage {
   background: #fff;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
@@ -1559,7 +1565,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   justify-content: center;
   background: var(--primary);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   margin-bottom: 20px;
 }
 .advantage__icon svg, .advantage__icon img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
@@ -1588,7 +1594,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   padding: 10px 28px;
   border: 1.5px solid var(--ink);
-  border-radius: 999px;
+  border-radius: var(--radius-control);
   color: var(--ink);
   background: transparent;
   transition: background .35s, color .35s, box-shadow .35s;
@@ -1642,7 +1648,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .news__thumb {
   width: 200px;
   height: 120px;
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -1737,7 +1743,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-height: 90vh;
   overflow-y: auto;
   background: #fff;
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 48px 48px 40px;
   box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.5);
   transform: translateY(24px) scale(0.96);
@@ -1878,7 +1884,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--ink);
   background: #eef2f7;
   border: 1.5px solid transparent;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   outline: none;
   transition: border-color .3s, background .3s;
 }
@@ -1913,7 +1919,7 @@ select.form-input:invalid { color: #9aa8bd; }
   color: #fff;
   background: var(--primary);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-control);
   cursor: pointer;
   transition: background .3s, transform .2s;
 }
@@ -1961,7 +1967,7 @@ select.form-input:invalid { color: #9aa8bd; }
   max-width: 90vw;
   max-height: 88vh;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: var(--radius-card);
   box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.5);
 }
 .lightbox__close {
@@ -1997,7 +2003,7 @@ select.form-input:invalid { color: #9aa8bd; }
 }
 .business__figure {
   position: relative;
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   background: #eef2f7;
   height: 100%;
@@ -2037,7 +2043,7 @@ select.form-input:invalid { color: #9aa8bd; }
   color: var(--ink);
   background: rgba(255, 255, 255, 0.92);
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-badge);
   white-space: nowrap;
   transition: background .3s, color .3s;
 }
@@ -2061,7 +2067,7 @@ select.form-input:invalid { color: #9aa8bd; }
   flex-wrap: wrap;
   margin-bottom: 24px;
   background: #fff;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   padding: 20px 48px;
   box-shadow: 0 12px 40px -20px rgba(13, 27, 42, 0.15);
 }
@@ -2132,7 +2138,7 @@ select.form-input:invalid { color: #9aa8bd; }
   gap: 48px;
   align-items: center;
   background: #fff;
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 48px;
   min-height: 500px;
   box-sizing: border-box;
@@ -2261,7 +2267,7 @@ select.form-input:invalid { color: #9aa8bd; }
 .honor-card__media {
   position: relative;
   aspect-ratio: 3 / 4;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   background: #fff;
   box-shadow: 0 12px 32px -16px rgba(13, 27, 42, 0.18);

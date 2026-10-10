@@ -12,7 +12,7 @@
 .service-card {
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.06);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 36px 28px;
   transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -41,7 +41,7 @@
 .service-card__icon {
   width: 56px;
   height: 56px;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   background: rgba(0, 73, 158, 0.08);
   display: flex;
   align-items: center;
@@ -185,7 +185,7 @@
 }
 .network__visual {
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   aspect-ratio: 1000 / 780;
 }
@@ -250,7 +250,7 @@
 .network__stat {
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.06);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   padding: 24px 20px;
   transition: all .3s;
 }
@@ -280,7 +280,7 @@
   grid-column: 1 / -1;
   background: linear-gradient(135deg, rgba(0, 73, 158, 0.06), rgba(0, 73, 158, 0.02));
   border: 1px solid rgba(0, 73, 158, 0.1);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   padding: 20px 24px;
   display: flex;
   align-items: center;
@@ -323,7 +323,7 @@
 }
 .partner-item {
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 32px 28px;
   border: 1px solid rgba(13, 27, 42, 0.06);
   transition: all .3s;
@@ -339,7 +339,7 @@
   color: var(--primary);
   background: rgba(0, 73, 158, 0.08);
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-badge);
   margin-bottom: 16px;
 }
 .partner-item__title {
@@ -381,7 +381,7 @@
 .quality-card {
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.06);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 32px 24px;
   text-align: center;
   transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -511,7 +511,7 @@
   gap: 20px;
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.06);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   padding: 20px 24px;
   transition: all .3s;
 }
@@ -555,7 +555,7 @@
 .feedback-card {
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.06);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 32px;
 }
 .feedback-card__title {
@@ -583,7 +583,7 @@
 .feedback-list__icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   background: rgba(0, 73, 158, 0.08);
   display: flex;
   align-items: center;
@@ -614,7 +614,7 @@
 .sla-item {
   background: rgba(0, 73, 158, 0.04);
   border: 1px solid rgba(0, 73, 158, 0.08);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   padding: 20px;
   text-align: center;
   transition: all .3s;

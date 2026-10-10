@@ -13,7 +13,7 @@
   margin-bottom: 48px;
   padding: 6px;
   background: #ffffff;
-  border-radius: 100px;
+  border-radius: var(--radius-control);
 }
 .news-tabs::before {
   content: '';
@@ -23,7 +23,7 @@
   width: var(--indicator-width, 0);
   height: calc(100% - 12px);
   background: #00489e;
-  border-radius: 100px;
+  border-radius: var(--radius-control);
   box-shadow: 0 2px 8px rgba(0, 72, 158, 0.25);
   transition: left .35s cubic-bezier(0.16, 1, 0.3, 1), width .35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
@@ -37,7 +37,7 @@
   color: var(--ink-soft);
   background: transparent;
   border: none;
-  border-radius: 100px;
+  border-radius: var(--radius-control);
   cursor: pointer;
   transition: color .3s;
   white-space: nowrap;
@@ -61,7 +61,7 @@
   gap: 48px;
   align-items: center;
   background: #fff;
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: 0 8px 30px -16px rgba(13, 27, 42, 0.12);
   transition: transform .35s, box-shadow .35s;
@@ -93,7 +93,7 @@
   font-weight: 600;
   color: #fff;
   background: var(--accent);
-  border-radius: 100px;
+  border-radius: var(--radius-badge);
   letter-spacing: 0.5px;
 }
 .news-featured__body {
@@ -130,7 +130,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  border-radius: 100px;
+  border-radius: var(--radius-button);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -167,7 +167,7 @@
 }
 .news-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: 0 6px 24px -16px rgba(13, 27, 42, 0.1);
   transition: transform .35s, box-shadow .35s;
@@ -199,7 +199,7 @@
   font-weight: 600;
   color: var(--primary);
   background: rgba(255, 255, 255, 0.92);
-  border-radius: 100px;
+  border-radius: var(--radius-badge);
   letter-spacing: 0.5px;
 }
 .news-card__body {
@@ -250,7 +250,7 @@
   color: var(--ink-soft);
   background: #fff;
   border: 1px solid rgba(13, 27, 42, 0.1);
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   cursor: pointer;
   transition: all .3s;
 }
@@ -320,7 +320,7 @@
   padding: 16px 20px;
   background: var(--bg-alt);
   border-left: 3px solid var(--primary);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
   margin-bottom: 28px;
 }
 .news-modal__content p {
