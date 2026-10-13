@@ -16,7 +16,6 @@
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
       <img src="images/logo.svg" alt="创心医疗" class="nav__logo-img">
-      <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
     </a>
     <nav class="nav__menu">
       <a href="index.html"><span class="nav__link-text-wrap"><span class="nav__link-text">首页</span><span class="nav__link-text nav__link-text--alt">首页</span></span></a>
@@ -65,7 +64,7 @@
 </header>
 
 <!-- ===== Page Hero ===== -->
-<section class="page-hero" id="home">
+<section class="page-hero page-hero--about" id="home">
   <div class="page-hero__bg">
     <img src="images/about-1.jpg" alt="关于创心" class="page-hero__img">
     <div class="page-hero__overlay"></div>
@@ -73,21 +72,18 @@
   <div class="container">
     <div class="page-hero__content">
       <span class="section__num section__num--light">About Us</span>
-      <h1 class="page-hero__title">关于<em>创心医疗</em></h1>
-      <p class="page-hero__sub">守正创新 · 精工智造 —— 专注血管疾病高端介入器械研发</p>
+      <h1 class="page-hero__title">关于<em>我们</em></h1>
     </div>
   </div>
 </section>
 
 <!-- ===== Company Intro ===== -->
-<section class="section about" id="about">
-  <div class="container">
-    <div class="section__head">
-      <span class="section__num">About</span>
-      <h2 class="section__title">公司<em>简介</em></h2>
-    </div>
-    <div class="about__grid">
-      <div class="about__text">
+<section class="section about about--swap" id="about">
+  <div class="about__inner">
+    <div class="about__content">
+      <div class="about__text-wrap">
+        <span class="section__num">About</span>
+        <h2 class="section__title">创心医疗<em>公司简介</em></h2>
         <p>
           深圳市创心医疗科技有限公司坐落于深圳市坪山区深城投生命科学园，是一家以<strong>主动脉及外周血管支架</strong>为核心，集研发、生产、销售为一体的专精特新高科技中小企业。公司于 <strong>2020 年 7 月</strong>开始运营，以医工结合的方式专注外周血管器械创新，解决临床痛点。公司拥有独立完善的 <strong>GMP 万级净化区</strong>，在 <strong>ISO13485</strong> 质量体系框架内，进行三类医疗器械的设计开发和生产制造。创业团队成员拥有 <strong>10 年以上</strong>行业经验，对临床需求、产业状况和市场均有深入研究。
         </p>
@@ -100,7 +96,6 @@
         <p>
           公司以 <strong>"落实法规要求，保障最优产品，满足顾客需求"</strong> 为质量方针，崇尚拼搏、协作、共赢、坚守的价值观，以医工结合，共创人类血管健康梦为历史使命，不断开拓创新，力争成为提供治疗血管疾病最先进产品的世界一流企业。
         </p>
-        <a href="index.html#products" class="btn btn--solid btn--small">查看产品中心 <span class="btn__arrow">→</span></a>
       </div>
       <div class="about__stats">
         <div class="stat stat--1">
@@ -128,9 +123,9 @@
           <div class="stat__overlay"></div>
           <div class="stat__icon"><img src="images/svg-image-3.svg" alt=""></div>
           <div class="stat__content">
-            <div class="stat__num stat__num--small">FDA 认证</div>
+            <div class="stat__num stat__num--small">EMA 认证</div>
             <div class="stat__label">EMA 认证</div>
-            <div class="stat__desc">全球首创主动脉夹层系统获美国突破性器械认证</div>
+            <div class="stat__desc">产品获欧盟医疗器械监管机构认证认可</div>
           </div>
         </div>
         <div class="stat stat--4">
@@ -140,10 +135,13 @@
           <div class="stat__content">
             <div class="stat__num" data-target="2" data-suffix="款">2款</div>
             <div class="stat__label">全球首创</div>
-            <div class="stat__desc">全球首创 突破性原创主动脉/静脉支架核心产品</div>
+            <div class="stat__desc">突破性原创主动脉/静脉支架核心产品</div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="about__image">
+      <img src="images/about-1.jpg" alt="创心医疗">
     </div>
   </div>
 </section>
@@ -155,67 +153,62 @@
       <span class="section__num">Timeline</span>
       <h2 class="section__title">发展<em>历程</em></h2>
     </div>
-    <div class="timeline__carousel">
-      <div class="timeline__viewport">
-        <div class="timeline__track">
-          <div class="timeline__item">
-            <div class="timeline__year">2020</div>
-            <div class="timeline__content">
-              <h3>公司成立</h3>
-              <p>深圳市创心医疗科技有限公司正式运营，斩获全国医疗器械创新大赛三等奖，启动主动脉及外周血管支架核心产品研发。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2021</div>
-            <div class="timeline__content">
-              <h3>核心产品立项</h3>
-              <p>完成 Stanford A 型主动脉夹层全腔内重建系统的产品设计定型，启动全国多中心临床试验伦理审批与中心筛选。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2022</div>
-            <div class="timeline__content">
-              <h3>GMP 万级净化区建成</h3>
-              <p>建成独立完善的 GMP 万级净化生产区，通过 ISO13485 质量管理体系认证，具备三类医疗器械设计开发与生产制造能力。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2023</div>
-            <div class="timeline__content">
-              <h3>FDA 突破性器械认证</h3>
-              <p>全球首创 Stanford A 型主动脉夹层全腔内重建系统获美国 FDA 突破性器械认证，相关临床研究发表于国际心胸外科顶级期刊 JTCVS。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2024</div>
-            <div class="timeline__content">
-              <h3>国际学术舞台</h3>
-              <p>连续 2 次受邀参加第 104 届和第 105 届美国心胸外科年会 AATS 并做专题报告，核心产品完成全部人体临床试验入组。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2024</div>
-            <div class="timeline__content">
-              <h3>国内首款药物涂层支架入组完成</h3>
-              <p>国内首款治疗中心静脉狭窄的药物涂层血管覆膜支架系统完成全部百余例多中心临床入组，为近百万血透患者带来新希望。</p>
-            </div>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__year">2025</div>
-            <div class="timeline__content">
-              <h3>全球化布局</h3>
-              <p>国内外专利与海外临床双线并进，多款全球首创器械加速上市，血管介入器械加速全球化布局。</p>
-            </div>
-          </div>
+    <div class="timeline__track">
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__year">2025</div>
+        <div class="timeline__content">
+          <h3>全球化布局</h3>
+          <p>国内外专利与海外临床双线并进，多款全球首创器械加速上市，血管介入器械加速全球化布局。</p>
+          <div class="timeline__img"><img src="images/lc-1.jpg" alt=""></div>
         </div>
       </div>
-      <div class="timeline__controls">
-        <button class="timeline__btn timeline__btn--prev" aria-label="上一条">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
-        </button>
-        <button class="timeline__btn timeline__btn--next" aria-label="下一条">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__year">2024</div>
+        <div class="timeline__content">
+          <h3>国内首款药物涂层支架入组完成</h3>
+          <p>国内首款治疗中心静脉狭窄的药物涂层血管覆膜支架系统完成全部百余例多中心临床入组，为近百万血透患者带来新希望。</p>
+          <div class="timeline__img"><img src="images/lc-2.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__year">2024</div>
+        <div class="timeline__content">
+          <h3>国际学术舞台</h3>
+          <p>连续 2 次受邀参加第 104 届和第 105 届美国心胸外科年会 AATS 并做专题报告，核心产品完成全部人体临床试验入组。</p>
+          <div class="timeline__img"><img src="images/lc-3.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__year">2023</div>
+        <div class="timeline__content">
+          <h3>FDA 突破性器械认证</h3>
+          <p>全球首创 Stanford A 型主动脉夹层全腔内重建系统获美国 FDA 突破性器械认证，相关临床研究发表于国际心胸外科顶级期刊 JTCVS。</p>
+          <div class="timeline__img"><img src="images/lc-4.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__year">2022</div>
+        <div class="timeline__content">
+          <h3>GMP 万级净化区建成</h3>
+          <p>建成独立完善的 GMP 万级净化生产区，通过 ISO13485 质量管理体系认证，具备三类医疗器械设计开发与生产制造能力。</p>
+          <div class="timeline__img"><img src="images/lc-5.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__year">2021</div>
+        <div class="timeline__content">
+          <h3>核心产品立项</h3>
+          <p>完成 Stanford A 型主动脉夹层全腔内重建系统的产品设计定型，启动全国多中心临床试验伦理审批与中心筛选。</p>
+          <div class="timeline__img"><img src="images/lc-6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__year">2020</div>
+        <div class="timeline__content">
+          <h3>公司成立</h3>
+          <p>深圳市创心医疗科技有限公司正式运营，斩获全国医疗器械创新大赛三等奖，启动主动脉及外周血管支架核心产品研发。</p>
+          <div class="timeline__img"><img src="images/lc-7.jpg" alt=""></div>
+        </div>
       </div>
     </div>
   </div>
@@ -230,7 +223,7 @@
     </div>
     <div class="business__body">
       <div class="business__figure">
-        <img src="images/human_body.jpg" alt="人体血管业务布局" class="business__img">
+        <img src="images/human_body.png" alt="人体血管业务布局" class="business__img">
         <div class="business__hotspot business__hotspot--1 is-active" data-target="0">
           <span class="business__dot"></span>
           <span class="business__label">主动脉</span>
@@ -327,9 +320,9 @@
     </div>
     <p class="mission__intro">
       拼搏代表了我们的工作状态和追求创新的态度；<br>
-      协作代表了我们合作和凝聚力强的团队，及万众一心的工作作风；<br>
-      共赢代表了一种开放务实的态度和奉献精神，赢在患者的口碑，赢在医生的认可，与合作伙伴共同分享成果；将高质量的产品奉献给患者和医生。<br>
-      坚守代表了守望患者心脑血管健康的决心和意志，是一份承诺和对创新无止境的不懈追求。
+      协作代表了凝心聚力的团队，以及万众一心的工作作风；<br>
+      共赢代表开放务实的奉献精神，赢在患者口碑、医生认可，与伙伴共享成果，把高质量产品献给医患；<br>
+      坚守代表守望患者心脑血管健康的决心，是一份承诺，亦是对创新无止境的不懈追求。
     </p>
     <div class="mission__grid">
       <div class="mission-card mission-card--1">
@@ -525,7 +518,6 @@
       <div class="footer__brand">
         <div class="footer__logo">
           <img src="images/logo.svg" alt="创心医疗" class="nav__logo-img">
-          <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
         </div>
         <p class="footer__slogan">守正创新 · 精工智造</p>
       </div>

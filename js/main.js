@@ -21,7 +21,7 @@ menu.querySelectorAll('a').forEach(a => {
 
 // ---- Reveal on scroll ----
 const revealEls = document.querySelectorAll(
-  '.section__head, .about__text, .about__stats, .product-card, .advantage, .news__item, .join__inner, .mission-card'
+  '.section__head, .about__content, .about__stats, .about__image, .product-card, .advantage, .news__item, .join__inner, .mission-card'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
@@ -35,6 +35,20 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
 revealEls.forEach(el => io.observe(el));
+
+// ---- Timeline reveal (trigger earlier, near viewport edge) ----
+const timelineItems = document.querySelectorAll('.timeline__item');
+timelineItems.forEach(el => el.classList.add('reveal'));
+const timelineIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      timelineIO.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+
+timelineItems.forEach(el => timelineIO.observe(el));
 
 // ---- Number counter animation ----
 const counters = document.querySelectorAll('.stat__num[data-target]');
@@ -64,8 +78,8 @@ counters.forEach(c => counterIO.observe(c));
   const banner = document.querySelector('.banner');
   if (!banner) return;
 
-  const slides = banner.querySelectorAll('.banner__slide');
-  const dots = banner.querySelectorAll('.banner__dot');
+  const slides = Array.from(banner.querySelectorAll('.banner__slide')).filter(s => s.style.display !== 'none');
+  const dots = Array.from(banner.querySelectorAll('.banner__dot')).filter(d => d.style.display !== 'none');
   const prevBtn = banner.querySelector('.banner__arrow--prev');
   const nextBtn = banner.querySelector('.banner__arrow--next');
   const playBtn = banner.querySelector('.banner__play-btn');
@@ -151,9 +165,9 @@ counters.forEach(c => counterIO.observe(c));
 
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
-  dots.forEach(dot => {
+  dots.forEach((dot, idx) => {
     dot.addEventListener('click', () => {
-      go(parseInt(dot.dataset.index, 10));
+      go(idx);
     });
   });
 
@@ -718,7 +732,7 @@ counters.forEach(c => counterIO.observe(c));
 
 // ---- Product Detail Media Carousel ----
 (() => {
-  const carousels = document.querySelectorAll('.product-detail__media .product-carousel');
+  const carousels = document.querySelectorAll('.product-cat__media .product-carousel');
   if (!carousels.length) return;
 
   carousels.forEach(carousel => {

@@ -8,7 +8,8 @@
 /* ===== Category Tabs ===== */
 .news-tabs {
   position: relative;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   gap: 0;
   margin-bottom: 48px;
   padding: 6px;
@@ -31,6 +32,7 @@
 .news-tab {
   position: relative;
   z-index: 1;
+  flex: 1;
   padding: 10px 24px;
   font-size: 15px;
   font-weight: 500;
@@ -53,7 +55,7 @@
 
 /* ===== Featured News ===== */
 .news-featured {
-  margin-bottom: 56px;
+  margin-bottom: 28px;
 }
 .news-featured__link {
   display: grid;

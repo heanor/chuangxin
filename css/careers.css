@@ -31,7 +31,7 @@
 .page-hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 60px;
+  font-size: 30px;
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: #fff;
@@ -55,7 +55,7 @@
   margin-top: 48px;
 }
 .intro-card {
-  background: #fff;
+  background: #f8fafc;
   border-radius: var(--radius-card);
   padding: 36px 28px;
   box-shadow: var(--shadow-sm);
@@ -95,7 +95,8 @@
 .positions { background: var(--bg-alt); }
 .pos-tabs {
   position: relative;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   gap: 0;
   margin: 40px 0 32px;
   padding: 6px;
@@ -118,6 +119,7 @@
 .pos-tab {
   position: relative;
   z-index: 1;
+  flex: 1;
   padding: 10px 24px;
   font-size: 15px;
   font-weight: 500;
@@ -325,7 +327,7 @@
 }
 .benefit-item {
   padding: 36px 28px;
-  background: #fff;
+  background: #f8fafc;
   border-radius: var(--radius-card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
@@ -367,7 +369,7 @@
 /* ===== Apply CTA ===== */
 .careers-apply {
   position: relative;
-  background: var(--ink);
+  background: var(--primary);
   color: #fff;
   overflow: hidden;
 }
@@ -375,7 +377,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../images/foot-1.jpg") center / cover no-repeat;
+  background: url("../images/foot-1.jpg") center / 100% auto fixed no-repeat;
   opacity: 0.1;
   pointer-events: none;
   z-index: 0;
@@ -401,7 +403,7 @@
 }
 .careers-apply__title em {
   font-style: normal;
-  color: var(--accent);
+  color: #fff;
 }
 .careers-apply__desc {
   font-size: 17px;
@@ -415,8 +417,8 @@
   align-items: center;
   gap: 8px;
   padding: 14px 36px;
-  background: var(--accent);
-  color: #fff;
+  background: #fff;
+  color: var(--primary);
   font-size: 16px;
   font-weight: 600;
   border-radius: var(--radius-button);
@@ -424,7 +426,7 @@
   transition: background 0.25s ease, transform 0.25s ease;
 }
 .careers-apply__btn:hover {
-  background: #c70010;
+  background: rgba(255, 255, 255, 0.85);
   transform: translateY(-2px);
 }
 .careers-apply__right {

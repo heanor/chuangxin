@@ -17,7 +17,6 @@
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
       <img src="images/logo.svg" alt="创心医疗" class="nav__logo-img">
-      <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
     </a>
     <nav class="nav__menu">
       <a href="index.html"><span class="nav__link-text-wrap"><span class="nav__link-text">首页</span><span class="nav__link-text nav__link-text--alt">首页</span></span></a>
@@ -75,7 +74,6 @@
     <div class="page-hero__content">
       <span class="section__num section__num--light">Service</span>
       <h1 class="page-hero__title">市场<em>服务</em></h1>
-      <p class="page-hero__sub">以患者为中心、以临床为导向，构建覆盖术前、术中、术后全周期的专业服务体系</p>
     </div>
   </div>
 </section>
@@ -83,10 +81,20 @@
 <!-- ===== Core Services ===== -->
 <section class="section services" id="services">
   <div class="container">
-    <div class="section__head">
-      <span class="section__num">Services</span>
-      <h2 class="section__title">核心<em>服务</em></h2>
-      <p class="section__desc">围绕血管介入全流程，提供专业、高效、可信赖的全方位服务支持</p>
+    <div class="service__intro">
+      <div class="service__intro-text">
+        <div class="service__intro-text-head">
+          <span class="section__num section__num--light">Services</span>
+          <h2 class="section__title">核心<em>服务</em></h2>
+          <p class="service__intro-desc">围绕血管介入全流程，提供专业、高效、可信赖的全方位服务支持</p>
+        </div>
+        <div class="service__intro-icon">
+          <img src="images/service-1.svg" alt="核心服务">
+        </div>
+      </div>
+      <div class="service__intro-media">
+        <img src="images/fw-1.jpg" alt="核心服务">
+      </div>
     </div>
     <div class="service-cards">
       <div class="service-card">
@@ -175,27 +183,27 @@
     </div>
     <div class="process__steps">
       <div class="process__step">
-        <div class="process__step-num">1</div>
+        <div class="process__step-num"><img src="images/fwlc-1.svg" alt=""></div>
         <h3 class="process__step-title">需求对接</h3>
         <p class="process__step-desc">了解临床需求与手术方案，确认器械配置</p>
       </div>
       <div class="process__step">
-        <div class="process__step-num">2</div>
+        <div class="process__step-num"><img src="images/fwlc-2.svg" alt=""></div>
         <h3 class="process__step-title">术前准备</h3>
         <p class="process__step-desc">器械调配、运输、消毒，术前技术交底</p>
       </div>
       <div class="process__step">
-        <div class="process__step-num">3</div>
+        <div class="process__step-num"><img src="images/fwlc-3.svg" alt=""></div>
         <h3 class="process__step-title">术中支持</h3>
         <p class="process__step-desc">专业工程师跟台，实时技术保障</p>
       </div>
       <div class="process__step">
-        <div class="process__step-num">4</div>
+        <div class="process__step-num"><img src="images/fwlc-4.svg" alt=""></div>
         <h3 class="process__step-title">术后随访</h3>
         <p class="process__step-desc">器械使用反馈收集，不良事件监测</p>
       </div>
       <div class="process__step">
-        <div class="process__step-num">5</div>
+        <div class="process__step-num"><img src="images/fwlc-5.svg" alt=""></div>
         <h3 class="process__step-title">持续优化</h3>
         <p class="process__step-desc">数据分析与产品迭代，服务质量提升</p>
       </div>
@@ -211,30 +219,7 @@
       <h2 class="section__title">服务<em>网络</em></h2>
       <p class="section__desc">全国布局的服务网络，为每一位客户提供快速、专业、就近的服务支持</p>
     </div>
-    <div class="network__grid">
-      <div class="network__visual">
-        <img class="network__map" src="images/china-map.svg" alt="中国服务网络地图">
-        <svg class="network__lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="68" y1="78" x2="82.5" y2="23"/>
-          <line x1="68" y1="78" x2="73" y2="62"/>
-          <line x1="68" y1="78" x2="68.8" y2="75"/>
-          <line x1="68" y1="78" x2="21" y2="38"/>
-          <line x1="68" y1="78" x2="43.8" y2="63"/>
-          <line x1="68" y1="78" x2="62.5" y2="57"/>
-          <line x1="68" y1="78" x2="51" y2="48"/>
-        </svg>
-        <div class="network__dots">
-          <span class="network__dot network__dot--core" style="top:78%;left:68%"></span>
-          <span class="network__dot" style="top:23%;left:82.5%"></span>
-          <span class="network__dot" style="top:62%;left:73%"></span>
-          <span class="network__dot" style="top:75%;left:68.8%"></span>
-          <span class="network__dot" style="top:38%;left:21%"></span>
-          <span class="network__dot" style="top:63%;left:43.8%"></span>
-          <span class="network__dot" style="top:57%;left:62.5%"></span>
-          <span class="network__dot" style="top:48%;left:51%"></span>
-        </div>
-      </div>
-      <div class="network__info">
+    <div class="network__info">
         <div class="network__stat">
           <div class="network__stat-num">30<span>+</span></div>
           <div class="network__stat-label">服务覆盖省市</div>
@@ -258,7 +243,6 @@
           <p class="network__commitment-text"><strong>7×24 小时服务承诺</strong>——全国服务热线全天候待命，紧急需求 2 小时内响应，48 小时内工程师到达现场。</p>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -272,32 +256,32 @@
     </div>
     <div class="quality__grid">
       <div class="quality-card">
+        <h3 class="quality-card__title">ISO13485 体系</h3>
+        <p class="quality-card__desc">全面通过 ISO13485 医疗器械质量管理体系认证，建立覆盖设计开发、生产制造、储运流通的全流程质量管控体系。</p>
         <div class="quality-card__icon">
           <img src="images/service-7.svg" alt="ISO13485 体系">
         </div>
-        <h3 class="quality-card__title">ISO13485 体系</h3>
-        <p class="quality-card__desc">全面通过 ISO13485 医疗器械质量管理体系认证，建立覆盖设计开发、生产制造、储运流通的全流程质量管控体系。</p>
       </div>
       <div class="quality-card">
+        <h3 class="quality-card__title">GMP 万级净化</h3>
+        <p class="quality-card__desc">建成独立完善的 GMP 万级净化生产区，严格控制生产环境洁净度，确保每一件产品都符合无菌医疗器械标准。</p>
         <div class="quality-card__icon">
           <img src="images/service-8.svg" alt="GMP 万级净化">
         </div>
-        <h3 class="quality-card__title">GMP 万级净化</h3>
-        <p class="quality-card__desc">建成独立完善的 GMP 万级净化生产区，严格控制生产环境洁净度，确保每一件产品都符合无菌医疗器械标准。</p>
       </div>
       <div class="quality-card">
+        <h3 class="quality-card__title">三类医疗器械资质</h3>
+        <p class="quality-card__desc">具备国家三类医疗器械设计开发与生产制造资质，核心产品均已取得医疗器械注册证与生产许可证。</p>
         <div class="quality-card__icon">
           <img src="images/service-9.svg" alt="三类医疗器械资质">
         </div>
-        <h3 class="quality-card__title">三类医疗器械资质</h3>
-        <p class="quality-card__desc">具备国家三类医疗器械设计开发与生产制造资质，核心产品均已取得医疗器械注册证与生产许可证。</p>
       </div>
       <div class="quality-card">
+        <h3 class="quality-card__title">全流程追溯</h3>
+        <p class="quality-card__desc">建立完善的产品唯一标识（UDI）追溯系统，实现从原材料到临床使用的全生命周期质量可追溯。</p>
         <div class="quality-card__icon">
           <img src="images/service-10.svg" alt="全流程追溯">
         </div>
-        <h3 class="quality-card__title">全流程追溯</h3>
-        <p class="quality-card__desc">建立完善的产品唯一标识（UDI）追溯系统，实现从原材料到临床使用的全生命周期质量可追溯。</p>
       </div>
     </div>
   </div>
@@ -311,48 +295,37 @@
       <h2 class="section__title">技术<em>支持</em></h2>
       <p class="section__desc">专业的临床应用工程师团队，为每一台手术提供精准、及时、全方位的技术保障</p>
     </div>
+    <div class="tech__bg-map"></div>
+    <div class="tech__person"><img src="images/jszc-1.png" alt="技术支持工程师"></div>
     <div class="tech__layout">
-      <div class="tech__visual">
-        <div class="tech__ring">
-          <div class="tech__ring-core">24h</div>
-          <div class="tech__ring-label">全天候技术响应</div>
-          <div class="tech__ring-img tech__ring-img--1"><img src="images/zhic1.png" alt="技术支持团队"></div>
-          <div class="tech__ring-img tech__ring-img--2"><img src="images/zhic6.png" alt="技术支持团队"></div>
-          <div class="tech__ring-img tech__ring-img--3"><img src="images/zhic5.png" alt="技术支持团队"></div>
-          <div class="tech__ring-img tech__ring-img--4"><img src="images/zhic3.png" alt="技术支持团队"></div>
-          <div class="tech__ring-img tech__ring-img--5"><img src="images/zhic4.png" alt="技术支持团队"></div>
-          <div class="tech__ring-img tech__ring-img--6"><img src="images/zhic2.png" alt="技术支持团队"></div>
-        </div>
+      <div class="tech-card tech-card--feature">
+        <span class="tech-card__num">24/7</span>
+        <div class="tech-card__big">24h</div>
+        <div class="tech-card__sub">全天候技术响应</div>
       </div>
-      <div class="tech__list">
-        <div class="tech-item">
-          <div class="tech-item__num">01</div>
-          <div class="tech-item__body">
-            <h3>术前方案支持</h3>
-            <p>基于患者影像数据与手术方案，协助临床团队完成器械选型、尺寸测量与术前预案制定。</p>
-          </div>
-        </div>
-        <div class="tech-item">
-          <div class="tech-item__num">02</div>
-          <div class="tech-item__body">
-            <h3>术中跟台保障</h3>
-            <p>资深临床应用工程师全程跟台，实时提供器械操作指导与技术配合，保障手术顺利进行。</p>
-          </div>
-        </div>
-        <div class="tech-item">
-          <div class="tech-item__num">03</div>
-          <div class="tech-item__body">
-            <h3>术后随访评估</h3>
-            <p>术后定期回访，收集器械使用反馈与临床数据，为产品优化与临床应用提供循证依据。</p>
-          </div>
-        </div>
-        <div class="tech-item">
-          <div class="tech-item__num">04</div>
-          <div class="tech-item__body">
-            <h3>紧急技术响应</h3>
-            <p>7×24 小时技术热线待命，紧急需求 2 小时内响应，48 小时内工程师到达现场支持。</p>
-          </div>
-        </div>
+
+      <div class="tech-card tech-card--1">
+        <span class="tech-card__num">PRE-OP</span>
+        <h3>术前方案支持</h3>
+        <p>基于患者影像数据与手术方案，协助临床团队完成器械选型、尺寸测量与术前预案制定。</p>
+      </div>
+
+      <div class="tech-card tech-card--2">
+        <span class="tech-card__num">IN-OP</span>
+        <h3>术中跟台保障</h3>
+        <p>资深临床应用工程师全程跟台，实时提供器械操作指导与技术配合，保障手术顺利进行。</p>
+      </div>
+
+      <div class="tech-card tech-card--3">
+        <span class="tech-card__num">POST-OP</span>
+        <h3>术后随访评估</h3>
+        <p>术后定期回访，收集器械使用反馈与临床数据，为产品优化与临床应用提供循证依据。</p>
+      </div>
+
+      <div class="tech-card tech-card--4">
+        <span class="tech-card__num">URGENT</span>
+        <h3>紧急技术响应</h3>
+        <p>7×24 小时技术热线待命，紧急需求 2 小时内响应，48 小时内工程师到达现场支持。</p>
       </div>
     </div>
   </div>
@@ -434,22 +407,37 @@
     </div>
     <div class="partners__items">
       <div class="partner-item">
-        <span class="partner-item__tag">医院合作</span>
-        <h3 class="partner-item__title">临床合作中心</h3>
-        <p class="partner-item__desc">与全国顶尖三甲医院建立临床合作中心，共同开展新技术临床研究与应用推广，加速创新器械的临床转化。</p>
-        <a href="contact.html" class="partner-item__link">洽谈合作 →</a>
+        <div class="partner-item__media">
+          <img src="images/hz-1.jpg" alt="临床合作中心">
+        </div>
+        <div class="partner-item__body">
+          <span class="partner-item__tag">医院合作</span>
+          <h3 class="partner-item__title">临床合作中心</h3>
+          <p class="partner-item__desc">与全国顶尖三甲医院建立临床合作中心，共同开展新技术临床研究与应用推广，加速创新器械的临床转化。</p>
+          <a href="contact.html" class="partner-item__link">洽谈合作 →</a>
+        </div>
       </div>
       <div class="partner-item">
-        <span class="partner-item__tag">渠道合作</span>
-        <h3 class="partner-item__title">区域经销商</h3>
-        <p class="partner-item__desc">诚邀全国各区域具备医疗器械经营资质与临床资源的经销商合作伙伴，共享市场机遇，共创产业价值。</p>
-        <a href="contact.html" class="partner-item__link">申请合作 →</a>
+        <div class="partner-item__media">
+          <img src="images/hz-2.jpg" alt="区域经销商">
+        </div>
+        <div class="partner-item__body">
+          <span class="partner-item__tag">渠道合作</span>
+          <h3 class="partner-item__title">区域经销商</h3>
+          <p class="partner-item__desc">诚邀全国各区域具备医疗器械经营资质与临床资源的经销商合作伙伴，共享市场机遇，共创产业价值。</p>
+          <a href="contact.html" class="partner-item__link">申请合作 →</a>
+        </div>
       </div>
       <div class="partner-item">
-        <span class="partner-item__tag">科研合作</span>
-        <h3 class="partner-item__title">高校与科研机构</h3>
-        <p class="partner-item__desc">与国内外顶尖高校、科研院所开展前沿材料与器械技术联合研发，推动产学研医深度融合创新。</p>
-        <a href="contact.html" class="partner-item__link">科研共建 →</a>
+        <div class="partner-item__media">
+          <img src="images/hz-3.jpg" alt="高校与科研机构">
+        </div>
+        <div class="partner-item__body">
+          <span class="partner-item__tag">科研合作</span>
+          <h3 class="partner-item__title">高校与科研机构</h3>
+          <p class="partner-item__desc">与国内外顶尖高校、科研院所开展前沿材料与器械技术联合研发，推动产学研医深度融合创新。</p>
+          <a href="contact.html" class="partner-item__link">科研共建 →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -479,7 +467,6 @@
       <div class="footer__brand">
         <div class="footer__logo">
           <img src="images/logo.svg" alt="创心医疗" class="nav__logo-img">
-          <span class="nav__logo-text">CHUANGXIN MEDICAL</span>
         </div>
         <p class="footer__slogan">守正创新 · 精工智造</p>
       </div>
