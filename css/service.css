@@ -1166,7 +1166,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 12px;
   flex: 1;
 }
 .feedback-list li {
@@ -1176,6 +1176,11 @@
   background: #f8fafc;
   border-radius: var(--radius-card);
   padding: 16px 20px;
+  transition: all .3s;
+}
+.feedback-list li:hover {
+  background: rgba(0, 73, 158, 0.08);
+  transform: translateY(-3px);
 }
 .feedback-list__icon {
   width: 40px;
@@ -1217,6 +1222,9 @@
   padding: 20px;
   text-align: center;
   transition: all .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .sla-item:hover {
   background: rgba(0, 73, 158, 0.08);
@@ -1229,11 +1237,6 @@
   color: var(--primary);
   line-height: 1;
   margin-bottom: 6px;
-}
-.sla-item__time span {
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 4px;
 }
 .sla-item__text {
   font-size: 13px;
