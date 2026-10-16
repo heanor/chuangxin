@@ -1002,3 +1002,23 @@ counters.forEach(c => counterIO.observe(c));
     });
   }
 })();
+
+// ---- Process cards: default active + accordion ----
+(() => {
+  const steps = document.querySelector('.process__steps');
+  if (!steps) return;
+  const cards = steps.querySelectorAll('.process__step');
+  const defaultActive = cards[1]; // 第2张卡片默认展开
+
+  // 鼠标移入任一张卡片：清除所有 active（让 hover 样式接管）
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach(c => c.classList.remove('is-active'));
+    });
+  });
+
+  // 鼠标移出整个区域：恢复第2张为 active
+  steps.addEventListener('mouseleave', () => {
+    if (defaultActive) defaultActive.classList.add('is-active');
+  });
+})();
