@@ -24,16 +24,20 @@
   inset: 0;
   background: linear-gradient(to top, rgba(2, 54, 109, 0.85) 0%, rgba(2, 67, 137, 0.52) 50%, rgba(1, 83, 169, 0.36) 100%);
 }
+.page-hero .container {
+  width: 100%;
+}
 .page-hero__content {
   position: relative;
   z-index: 2;
   padding-bottom: 72px;
   color: #fff;
+  text-align: left;
 }
 .page-hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 60px;
+  font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: #fff;
@@ -44,14 +48,14 @@
   color: #fff;
 }
 .page-hero__sub {
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.5px;
 }
 
 /* ===== Contact Section ===== */
 .contact { background: #fff; padding-bottom: 0; }
-#contact .section__title { font-weight: 500; }
+#contact .section__title { font-weight: 700; }
 
 /* Top: Info + Map */
 .contact__top {

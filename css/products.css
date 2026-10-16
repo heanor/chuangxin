@@ -1,0 +1,17 @@
+/* ============================================================
+   Products Page - 产品中心页面特有样式
+   ============================================================ */
+
+/* ===== Page Hero ===== */
+.page-hero .container {
+  width: 100%;
+}
+.page-hero__content {
+  text-align: left;
+}
+.page-hero__title {
+  font-size: 52px;
+}
+.page-hero__sub {
+  font-size: 15px;
+}

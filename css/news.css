@@ -3,6 +3,20 @@
    ============================================================ */
 .news-page {
   background: var(--bg-alt);
+  padding-top: 80px;
+}
+
+.page-hero .container {
+  width: 100%;
+}
+.page-hero__content {
+  text-align: left;
+}
+.page-hero__sub {
+  font-size: 15px;
+}
+.page-hero__title {
+  font-size: 52px;
 }
 
 /* ===== Category Tabs ===== */

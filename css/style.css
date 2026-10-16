@@ -3,6 +3,78 @@
    Design reference: integratedbio.com
    ============================================================ */
 
+/* MiSans — 通过 @font-face 显式加载，避免浏览器本地字体名识别差异 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Thin.ttf') format('truetype');
+  font-weight: 50;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-ExtraLight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Normal.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Demibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Semibold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('../fonts/MiSans-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors — Blue #00499E (primary) + Red #E60012 (accent) */
   --bg: #ffffff;
@@ -678,7 +750,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section__num--light { color: rgba(255, 255, 255, 0.5); }
 .section__title {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -1020,9 +1092,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: #fff;
   margin: 16px 0 16px;
 }
+.page-hero--about .container {
+  width: 100%;
+}
+.page-hero--about .page-hero__content {
+  text-align: left;
+}
 .page-hero--about .page-hero__title {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 52px;
+  font-weight: 600;
+}
+.page-hero--about .page-hero__sub {
+  font-size: 15px;
 }
 .page-hero__title em {
   font-style: normal;
@@ -1038,6 +1119,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    Mission & Vision
    ============================================================ */
 .mission { background: var(--bg-alt); }
+.mission .section__title { transform: translateY(-4px); }
+.business .section__title { transform: translateY(-4px); }
 .mission__intro {
   font-size: 16px;
   color: var(--ink-soft);
@@ -1148,6 +1231,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    Timeline
    ============================================================ */
 .timeline { background: #f0f7ff; }
+.timeline .section__title { transform: translateY(-4px); }
 .timeline__item.reveal { transition-delay: 0s; }
 .timeline__item.reveal:nth-child(2) { transition-delay: 0.05s; }
 .timeline__item.reveal:nth-child(3) { transition-delay: 0.10s; }
@@ -2346,6 +2430,7 @@ select.form-input:invalid { color: #9aa8bd; }
    Honors
    ============================================================ */
 .honors { background: var(--bg); }
+.honors .section__title { transform: translateY(-4px); }
 .honors__controls {
   display: flex;
   gap: 12px;
@@ -2488,7 +2573,7 @@ select.form-input:invalid { color: #9aa8bd; }
 }
 .join__right .btn--solid {
   background: #fff;
-  color: #2F4FD2;
+  color: #00499e;
 }
 .join__right .btn--solid:hover {
   background: rgba(255, 255, 255, 0.85);
